@@ -1,0 +1,24 @@
+unit UpesquisaMarca;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFPesquisaMarca = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPesquisaMarca: TFPesquisaMarca;
+
+implementation
+
+{$R *.dfm}
+
+end.

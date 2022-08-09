@@ -1,0 +1,90 @@
+unit UitCompra;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Buttons;
+
+type
+  TFItCompra = class(TForm)
+    Label1: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBText1: TDBText;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit3: TDBEdit;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure DBLookupComboBox1Exit(Sender: TObject);
+    procedure DBEdit2Exit(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FItCompra: TFItCompra;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TFItCompra.BitBtn1Click(Sender: TObject);
+begin
+
+     if DBLookupComboBox1.Text='' Then
+    begin
+      messageDLG('Escolha um produto',mtInformation,[mbok],0);
+      DBLooKupComboBox1.SetFocus;
+      Exit;
+    end;
+
+  if DM.TBItemCompraQUANTIDADE.AsFloat<=0 then
+    begin
+      MessageDlg('Quantidade deve ser maior que zero',
+      mtInformation,[mbok],0);
+      DbEdit3.SetFocus;
+      Exit;
+    end;
+  DM.TBItemCompra.Post;
+  DM.TBCompra.Refresh;
+  Close;
+end;
+
+procedure TFItCompra.BitBtn2Click(Sender: TObject);
+begin
+DM.TBItemCompra.Cancel;
+    DM.TBCompra.Refresh;
+    Close;
+end;
+
+procedure TFItCompra.DBEdit2Exit(Sender: TObject);
+begin
+
+     DM.TBItemCompraTOTAL.AsFloat:=
+     DM.TBItemCompraQUANTIDADE.AsInteger*
+     DM.TBItemCompraVALORITEMCOMPRA.AsFloat;
+
+end;
+
+procedure TFItCompra.DBLookupComboBox1Exit(Sender: TObject);
+begin
+
+
+    DM.TBItemCompraVALORITEMCOMPRA.AsFloat:=
+    DM.TBProdutoPRECOVENDA.AsFloat;
+
+end;
+
+end.

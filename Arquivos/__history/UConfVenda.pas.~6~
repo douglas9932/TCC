@@ -1,0 +1,66 @@
+unit UConfVenda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Buttons;
+
+type
+  TFConfVenda = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    LBTroco: TLabel;
+    DBComboBox1: TDBComboBox;
+    DBText1: TDBText;
+    EDValorRecebido: TEdit;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    procedure EDValorRecebidoExit(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FConfVenda: TFConfVenda;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TFConfVenda.BitBtn2Click(Sender: TObject);
+begin
+
+        DM.TBVenda.Cancel;
+        Close;
+
+end;
+
+procedure TFConfVenda.EDValorRecebidoExit(Sender: TObject);
+begin
+
+    if StrtoFloat (EDValorRecebido.Text)>=
+      StrtoFloat (DBText1.Caption)
+    then
+
+    Begin
+    LBTroco.Caption:= FloattoStr
+    (StrtoFloat (EDValorRecebido.Text)-
+    StrtoFloat (DBText1.Caption));
+
+    End
+    else
+    Showmessage('O Valor Recebido Não Pode Ser Menor Que O Valor Total Da Venda') ;
+
+
+end;
+
+end.

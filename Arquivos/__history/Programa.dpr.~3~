@@ -1,0 +1,18 @@
+program Programa;
+
+uses
+  Vcl.Forms,
+  UEstado in 'UEstado.pas' {FEstado},
+  UCidade in 'UCidade.pas' {FCidade},
+  UDM in 'UDM.pas' {DM: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFEstado, FEstado);
+  Application.CreateForm(TFCidade, FCidade);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.

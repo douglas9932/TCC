@@ -1,0 +1,249 @@
+object FDescarte: TFDescarte
+  Left = 0
+  Top = 0
+  Caption = 'FDescarte'
+  ClientHeight = 494
+  ClientWidth = 724
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 42
+    Width = 45
+    Height = 16
+    Caption = 'Codigo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 183
+    Top = 42
+    Width = 76
+    Height = 16
+    Caption = 'Funcion'#225'rio'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 73
+    Width = 50
+    Height = 16
+    Caption = 'Produto'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 107
+    Width = 62
+    Height = 16
+    Caption = 'Descri'#231#227'o'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 142
+    Width = 29
+    Height = 16
+    Caption = 'Data'
+    FocusControl = DBEdit5
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 547
+    Top = 73
+    Width = 74
+    Height = 16
+    Caption = 'Quantidade'
+    FocusControl = DBEdit6
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 57
+    Top = 44
+    Width = 49
+    Height = 17
+    DataField = 'IDDESCARTE'
+    DataSource = DM.DSDescarte
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 724
+    Height = 33
+    Align = alTop
+    Color = clBtnFace
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    ExplicitWidth = 724
+    ExplicitHeight = 33
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      Visible = False
+    end
+    inherited BTExcluir: TBitBtn
+      Enabled = False
+      Visible = False
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn11: TBitBtn
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit5: TDBEdit
+    Left = 41
+    Top = 141
+    Width = 80
+    Height = 21
+    DataField = 'DATA'
+    DataSource = DM.DSDescarte
+    TabOrder = 1
+  end
+  object DBEdit6: TDBEdit
+    Left = 632
+    Top = 72
+    Width = 62
+    Height = 21
+    DataField = 'QTD'
+    DataSource = DM.DSDescarte
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 266
+    Top = 40
+    Width = 428
+    Height = 21
+    DataField = 'IDFUNCIONARIO'
+    DataSource = DM.DSDescarte
+    KeyField = 'IDFUNCIONARIO'
+    ListField = 'NOMEFUNCIONARIO'
+    ListSource = DM.DSFuncionario
+    TabOrder = 3
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 69
+    Top = 73
+    Width = 414
+    Height = 21
+    DataField = 'IDPRODUTO'
+    DataSource = DM.DSDescarte
+    KeyField = 'IDPRODUTO'
+    ListField = 'NOMEPRODUTO'
+    ListSource = DM.DSProduto
+    TabOrder = 4
+  end
+  object DBEdit1: TDBEdit
+    Left = 76
+    Top = 106
+    Width = 618
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'DESCRICAO'
+    DataSource = DM.DSDescarte
+    TabOrder = 5
+  end
+  object DBGrid1: TDBGrid
+    Left = 4
+    Top = 176
+    Width = 713
+    Height = 310
+    DataSource = DM.DSDescarte
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
+    TabOrder = 6
+    TitleFont.Charset = ANSI_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -13
+    TitleFont.Name = 'Arial'
+    TitleFont.Style = [fsBold]
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDDESCARTE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Produto'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Funcionario'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESCRICAO'
+        Title.Caption = 'Descri'#231#227'o'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DATA'
+        Title.Caption = 'Data'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QTD'
+        Visible = True
+      end>
+  end
+end

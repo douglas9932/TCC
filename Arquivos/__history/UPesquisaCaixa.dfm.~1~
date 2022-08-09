@@ -1,0 +1,59 @@
+object FPesquisaCaixa: TFPesquisaCaixa
+  Left = 0
+  Top = 0
+  Caption = 'FPesquisaCaixa'
+  ClientHeight = 445
+  ClientWidth = 662
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RGPesquisa: TRadioGroup
+    Left = 24
+    Top = 24
+    Width = 153
+    Height = 153
+    Caption = 'Escolha um Tipo de Pesquisa'
+    ItemIndex = 0
+    Items.Strings = (
+      'Tudo'
+      'C'#243'digo'
+      'Nome'
+      'Status')
+    TabOrder = 0
+  end
+  object EDPesquisa: TEdit
+    Left = 264
+    Top = 32
+    Width = 241
+    Height = 21
+    CharCase = ecUpperCase
+    TabOrder = 1
+  end
+  object BTPesquisa: TBitBtn
+    Left = 520
+    Top = 30
+    Width = 75
+    Height = 25
+    Caption = '&Pesquisar'
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Top = 183
+    Width = 571
+    Height = 256
+    DataSource = DM.DSPesquisa
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+end

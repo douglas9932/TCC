@@ -1,0 +1,85 @@
+object FPrincipal: TFPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'FPrincipal'
+  ClientHeight = 519
+  ClientWidth = 778
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 184
+    Top = 144
+    object Cadastro1: TMenuItem
+      Caption = 'Cadastro'
+      object N1: TMenuItem
+        Caption = 'Estado'
+        OnClick = N1Click
+      end
+      object Cidade1: TMenuItem
+        Caption = 'Cidade'
+        OnClick = Cidade1Click
+      end
+      object Cliente1: TMenuItem
+        Caption = 'Cliente'
+      end
+      object Fornecedor1: TMenuItem
+        Caption = 'Fornecedor'
+      end
+      object Funcionario1: TMenuItem
+        Caption = 'Funcionario'
+      end
+      object Produto1: TMenuItem
+        Caption = 'Marca'
+      end
+      object Produto2: TMenuItem
+        Caption = 'Produto'
+      end
+    end
+    object Movimento1: TMenuItem
+      Caption = 'Movimento'
+      object Compra1: TMenuItem
+        Caption = 'Compra'
+      end
+      object Venda1: TMenuItem
+        Caption = 'Venda'
+      end
+      object Descarte1: TMenuItem
+        Caption = 'Descarte'
+      end
+    end
+    object Financeiro1: TMenuItem
+      Caption = 'Financeiro'
+      object ContasaPagar1: TMenuItem
+        Caption = 'Contas a Pagar'
+      end
+      object ContasaReceber1: TMenuItem
+        Caption = 'Contas a Receber'
+      end
+      object Recebimento1: TMenuItem
+        Caption = 'Recebimento'
+      end
+      object Pagamento1: TMenuItem
+        Caption = 'Pagamento'
+      end
+      object Caixa1: TMenuItem
+        Caption = 'Caixa'
+      end
+    end
+    object Consultas1: TMenuItem
+      Caption = 'Consultas'
+    end
+    object Fechar1: TMenuItem
+      Caption = 'Fechar'
+      OnClick = Fechar1Click
+    end
+  end
+end

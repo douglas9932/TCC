@@ -1,0 +1,34 @@
+unit UDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, IBX.IBCustomDataSet,
+  IBX.IBUpdateSQL, IBX.IBQuery, IBX.IBDatabase;
+
+type
+  TDM = class(TDataModule)
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    TBEstado: TIBQuery;
+    IBEstado: TIBUpdateSQL;
+    DSEstado: TDataSource;
+    IBQuery2: TIBQuery;
+    IBUpdateSQL2: TIBUpdateSQL;
+    DataSource2: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

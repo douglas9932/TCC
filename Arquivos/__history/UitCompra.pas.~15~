@@ -1,0 +1,95 @@
+unit UitCompra;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Buttons;
+
+type
+  TFItCompra = class(TForm)
+    Label1: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBText1: TDBText;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit3: TDBEdit;
+    BitBtn3: TBitBtn;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure DBEdit3Exit(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FItCompra: TFItCompra;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM, UProduto;
+
+procedure TFItCompra.BitBtn1Click(Sender: TObject);
+begin
+
+
+    if DBLookupComboBox1.Text='' Then
+    begin
+      messageDLG('Escolha um Produto',mtInformation,[mbok],0);
+      DBLooKupComboBox1.SetFocus;
+      Exit;
+    end;
+
+  if DM.TBItemCompraQUANTIDADE.AsFloat<=0 then
+    begin
+      MessageDlg('Quantidade Deve Ser Maior Que Zero',
+      mtInformation,[mbok],0);
+      DbEdit3.SetFocus;
+      Exit;
+    end;
+    if DM.TBItemCompraVALORITEMCOMPRA.AsFloat<=0 then
+    begin
+      MessageDlg('Valor Deve Ser Maior Que Zero',
+      mtInformation,[mbok],0);
+      DbEdit3.SetFocus;
+      Exit;
+    end;
+  DM.TBItemCompra.Post;
+  DM.TBCompra.Refresh;
+  Close;
+end;
+
+procedure TFItCompra.BitBtn2Click(Sender: TObject);
+begin
+DM.TBItemCompra.Cancel;
+    DM.TBCompra.Refresh;
+    Close;
+end;
+
+procedure TFItCompra.BitBtn3Click(Sender: TObject);
+begin
+  FProduto.Showmodal;
+end;
+
+procedure TFItCompra.DBEdit3Exit(Sender: TObject);
+begin
+
+     DM.TBItemCompraTOTAL.AsFloat:=
+     DM.TBItemCompraQUANTIDADE.AsInteger*
+     DM.TBItemCompraVALORITEMCOMPRA.AsFloat;
+
+end;
+
+end.

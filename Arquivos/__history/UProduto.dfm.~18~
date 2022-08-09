@@ -1,0 +1,295 @@
+object FProduto: TFProduto
+  Left = 0
+  Top = 0
+  Caption = 'FProduto'
+  ClientHeight = 516
+  ClientWidth = 716
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 5
+    Top = 46
+    Width = 45
+    Height = 16
+    Caption = 'C'#243'digo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 3
+    Top = 80
+    Width = 39
+    Height = 16
+    Caption = 'Marca'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 162
+    Top = 46
+    Width = 111
+    Height = 16
+    Caption = 'Nome do Produto'
+    FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 238
+    Top = 80
+    Width = 96
+    Height = 16
+    Caption = 'Pre'#231'o de Custo'
+    FocusControl = DBEdit4
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 466
+    Top = 80
+    Width = 101
+    Height = 16
+    Caption = 'Pre'#231'o de Venda'
+    FocusControl = DBEdit5
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 3
+    Top = 111
+    Width = 74
+    Height = 16
+    Caption = 'Quantidade'
+    FocusControl = DBEdit6
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 170
+    Top = 111
+    Width = 39
+    Height = 16
+    Caption = 'Status'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 69
+    Top = 48
+    Width = 44
+    Height = 17
+    DataField = 'IDPRODUTO'
+    DataSource = DM.DSProduto
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 716
+    Height = 33
+    Align = alTop
+    Color = clBtnFace
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    ExplicitWidth = 716
+    ExplicitHeight = 33
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+    inherited BitBtn11: TBitBtn
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 279
+    Top = 45
+    Width = 395
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMEPRODUTO'
+    DataSource = DM.DSProduto
+    TabOrder = 1
+  end
+  object DBEdit4: TDBEdit
+    Left = 340
+    Top = 79
+    Width = 82
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'PRECOCUSTO'
+    DataSource = DM.DSProduto
+    Enabled = False
+    TabOrder = 2
+  end
+  object DBEdit5: TDBEdit
+    Left = 573
+    Top = 79
+    Width = 82
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'PRECOVENDA'
+    DataSource = DM.DSProduto
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 86
+    Top = 110
+    Width = 73
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'QUANTIDADE'
+    DataSource = DM.DSProduto
+    Enabled = False
+    TabOrder = 4
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 215
+    Top = 110
+    Width = 79
+    Height = 21
+    DataField = 'STATUSPRODUTO'
+    DataSource = DM.DSProduto
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 5
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 50
+    Top = 79
+    Width = 159
+    Height = 21
+    DataField = 'IDMARCA'
+    DataSource = DM.DSProduto
+    KeyField = 'IDMARCA'
+    ListField = 'NOMEMARCA'
+    ListSource = DM.DSMarca
+    TabOrder = 6
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 144
+    Width = 700
+    Height = 364
+    DataSource = DM.DSProduto
+    TabOrder = 7
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDPRODUTO'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMEPRODUTO'
+        Title.Caption = 'Nome do Produto'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'marca'
+        Title.Caption = 'Marca'
+        Width = 109
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PRECOCUSTO'
+        Title.Caption = 'Preco de Custo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PRECOVENDA'
+        Title.Caption = 'Preco de Venda'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QUANTIDADE'
+        Title.Caption = 'Quantidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSPRODUTO'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+end

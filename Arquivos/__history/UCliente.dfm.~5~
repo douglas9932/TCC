@@ -1,0 +1,322 @@
+object FCliente: TFCliente
+  Left = 0
+  Top = 0
+  Caption = 'FCliente'
+  ClientHeight = 483
+  ClientWidth = 779
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 7
+    Top = 45
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
+  end
+  object Label2: TLabel
+    Left = 7
+    Top = 139
+    Width = 33
+    Height = 13
+    Caption = 'Cidade'
+  end
+  object Label3: TLabel
+    Left = 109
+    Top = 44
+    Width = 27
+    Height = 13
+    Caption = 'Nome'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 6
+    Top = 74
+    Width = 19
+    Height = 13
+    Caption = 'CPF'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 423
+    Top = 77
+    Width = 24
+    Height = 13
+    Caption = 'Sexo'
+  end
+  object Label6: TLabel
+    Left = 196
+    Top = 77
+    Width = 81
+    Height = 13
+    Caption = 'Data Nascimento'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 378
+    Top = 104
+    Width = 45
+    Height = 13
+    Caption = 'Endere'#231'o'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 516
+    Top = 74
+    Width = 42
+    Height = 13
+    Caption = 'Telefone'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 8
+    Top = 104
+    Width = 24
+    Height = 13
+    Caption = 'Email'
+    FocusControl = DBEdit9
+  end
+  object Label10: TLabel
+    Left = 527
+    Top = 42
+    Width = 14
+    Height = 13
+    Caption = 'RG'
+    FocusControl = DBEdit10
+  end
+  object Label11: TLabel
+    Left = 315
+    Top = 139
+    Width = 82
+    Height = 13
+    Caption = 'Status do Cliente'
+  end
+  object DBText1: TDBText
+    Left = 46
+    Top = 44
+    Width = 43
+    Height = 17
+    DataField = 'IDCLIENTE'
+    DataSource = DM.DSCliente
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 779
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 779
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 142
+    Top = 39
+    Width = 363
+    Height = 21
+    DataField = 'NOMECLIENTE'
+    DataSource = DM.DSCliente
+    TabOrder = 1
+  end
+  object DBEdit4: TDBEdit
+    Left = 31
+    Top = 74
+    Width = 148
+    Height = 21
+    DataField = 'CPF'
+    DataSource = DM.DSCliente
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 283
+    Top = 74
+    Width = 134
+    Height = 21
+    DataField = 'DATANASCIMENTO'
+    DataSource = DM.DSCliente
+    TabOrder = 4
+  end
+  object DBEdit7: TDBEdit
+    Left = 438
+    Top = 101
+    Width = 334
+    Height = 21
+    DataField = 'ENDERECO'
+    DataSource = DM.DSCliente
+    TabOrder = 8
+  end
+  object DBEdit8: TDBEdit
+    Left = 572
+    Top = 71
+    Width = 173
+    Height = 21
+    DataField = 'TELEFONE'
+    DataSource = DM.DSCliente
+    TabOrder = 6
+  end
+  object DBEdit9: TDBEdit
+    Left = 38
+    Top = 101
+    Width = 334
+    Height = 21
+    DataField = 'EMAIL'
+    DataSource = DM.DSCliente
+    TabOrder = 7
+  end
+  object DBEdit10: TDBEdit
+    Left = 547
+    Top = 39
+    Width = 182
+    Height = 21
+    DataField = 'RG'
+    DataSource = DM.DSCliente
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 46
+    Top = 136
+    Width = 230
+    Height = 21
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSCliente
+    KeyField = 'IDCIDADE'
+    ListField = 'NOMECIDADES'
+    ListSource = DM.DSCidade
+    TabOrder = 9
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 455
+    Top = 71
+    Width = 48
+    Height = 21
+    DataField = 'SEXO'
+    DataSource = DM.DSCliente
+    Items.Strings = (
+      'M'
+      'F')
+    TabOrder = 5
+  end
+  object DBComboBox2: TDBComboBox
+    Left = 408
+    Top = 136
+    Width = 145
+    Height = 21
+    DataField = 'STATUSCLIENTE'
+    DataSource = DM.DSCliente
+    Items.Strings = (
+      'ATIVO'#11
+      'INATIVO')
+    TabOrder = 10
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 184
+    Width = 763
+    Height = 291
+    DataSource = DM.DSCliente
+    TabOrder = 11
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDCLIENTE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'IDCIDADE'
+        Title.Caption = 'Cidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECLIENTE'
+        Title.Caption = 'Nome do Cliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CPF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SEXO'
+        Title.Caption = 'Sexo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DATANASCIMENTO'
+        Title.Caption = 'Data do Nascimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ENDERECO'
+        Title.Caption = 'Endere'#231'o'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TELEFONE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMAIL'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'RG'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSCLIENTE'
+        Visible = True
+      end>
+  end
+end

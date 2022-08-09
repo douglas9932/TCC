@@ -1,0 +1,306 @@
+object FFuncionario: TFFuncionario
+  Left = 0
+  Top = 0
+  Caption = 'FFuncionario'
+  ClientHeight = 516
+  ClientWidth = 723
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 404
+    Top = 178
+    Width = 47
+    Height = 13
+    Caption = 'IDCARGO'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 456
+    Top = 145
+    Width = 49
+    Height = 13
+    Caption = 'IDCIDADE'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 9
+    Top = 53
+    Width = 101
+    Height = 13
+    Caption = 'NOMEFUNCIONARIO'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 460
+    Top = 53
+    Width = 19
+    Height = 13
+    Caption = 'CPF'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 9
+    Top = 81
+    Width = 14
+    Height = 13
+    Caption = 'RG'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 495
+    Top = 81
+    Width = 26
+    Height = 13
+    Caption = 'SEXO'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 229
+    Top = 81
+    Width = 93
+    Height = 13
+    Caption = 'DATANASCIMENTO'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 8
+    Top = 145
+    Width = 54
+    Height = 13
+    Caption = 'ENDERECO'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 8
+    Top = 113
+    Width = 50
+    Height = 13
+    Caption = 'TELEFONE'
+    FocusControl = DBEdit9
+  end
+  object Label10: TLabel
+    Left = 280
+    Top = 113
+    Width = 30
+    Height = 13
+    Caption = 'EMAIL'
+    FocusControl = DBEdit10
+  end
+  object Label11: TLabel
+    Left = 8
+    Top = 178
+    Width = 36
+    Height = 13
+    Caption = 'CARGO'
+    FocusControl = DBEdit11
+  end
+  object Label12: TLabel
+    Left = 407
+    Top = 211
+    Width = 44
+    Height = 13
+    Caption = 'SALARIO'
+    FocusControl = DBEdit12
+  end
+  object Label13: TLabel
+    Left = 9
+    Top = 211
+    Width = 117
+    Height = 13
+    Caption = 'CARTEIRADETRABALHO'
+    FocusControl = DBEdit13
+  end
+  object Label14: TLabel
+    Left = 8
+    Top = 249
+    Width = 110
+    Height = 13
+    Caption = 'STATUSFUNCIONARIO'
+    FocusControl = DBEdit14
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 723
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 723
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+  end
+  object DBEdit1: TDBEdit
+    Left = 457
+    Top = 175
+    Width = 134
+    Height = 21
+    DataField = 'IDCARGO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 511
+    Top = 142
+    Width = 134
+    Height = 21
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSFuncionario
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 122
+    Top = 48
+    Width = 325
+    Height = 21
+    DataField = 'NOMEFUNCIONARIO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 485
+    Top = 48
+    Width = 186
+    Height = 21
+    DataField = 'CPF'
+    DataSource = DM.DSFuncionario
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 29
+    Top = 78
+    Width = 186
+    Height = 21
+    DataField = 'RG'
+    DataSource = DM.DSFuncionario
+    TabOrder = 5
+  end
+  object DBEdit6: TDBEdit
+    Left = 527
+    Top = 78
+    Width = 93
+    Height = 21
+    DataField = 'SEXO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 6
+  end
+  object DBEdit7: TDBEdit
+    Left = 328
+    Top = 78
+    Width = 151
+    Height = 21
+    DataField = 'DATANASCIMENTO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 7
+  end
+  object DBEdit8: TDBEdit
+    Left = 68
+    Top = 142
+    Width = 369
+    Height = 21
+    DataField = 'ENDERECO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 8
+  end
+  object DBEdit9: TDBEdit
+    Left = 64
+    Top = 110
+    Width = 199
+    Height = 21
+    DataField = 'TELEFONE'
+    DataSource = DM.DSFuncionario
+    TabOrder = 9
+  end
+  object DBEdit10: TDBEdit
+    Left = 316
+    Top = 110
+    Width = 313
+    Height = 21
+    DataField = 'EMAIL'
+    DataSource = DM.DSFuncionario
+    TabOrder = 10
+  end
+  object DBEdit11: TDBEdit
+    Left = 50
+    Top = 175
+    Width = 340
+    Height = 21
+    DataField = 'CARGO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 11
+  end
+  object DBEdit12: TDBEdit
+    Left = 457
+    Top = 208
+    Width = 134
+    Height = 21
+    DataField = 'SALARIO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 12
+  end
+  object DBEdit13: TDBEdit
+    Left = 132
+    Top = 208
+    Width = 258
+    Height = 21
+    DataField = 'CARTEIRADETRABALHO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 13
+  end
+  object DBEdit14: TDBEdit
+    Left = 124
+    Top = 246
+    Width = 134
+    Height = 21
+    DataField = 'STATUSFUNCIONARIO'
+    DataSource = DM.DSFuncionario
+    TabOrder = 14
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 288
+    Width = 707
+    Height = 217
+    DataSource = DM.DSFuncionario
+    TabOrder = 15
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+end

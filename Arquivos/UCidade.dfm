@@ -1,0 +1,232 @@
+object FCidade: TFCidade
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Cidades'
+  ClientHeight = 474
+  ClientWidth = 719
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 46
+    Width = 45
+    Height = 16
+    Caption = 'C'#243'digo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 575
+    Top = 46
+    Width = 42
+    Height = 16
+    Caption = 'Estado'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 138
+    Top = 46
+    Width = 106
+    Height = 16
+    Caption = 'Nome da Cidade'
+    FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 82
+    Width = 39
+    Height = 16
+    Caption = 'Status'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 57
+    Top = 48
+    Width = 49
+    Height = 17
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSCidade
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 719
+    Height = 33
+    Align = alTop
+    Color = clBtnFace
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    ExplicitWidth = 719
+    ExplicitHeight = 33
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+    inherited BitBtn11: TBitBtn
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 250
+    Top = 45
+    Width = 311
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMECIDADES'
+    DataSource = DM.DSCidade
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 6
+    Top = 110
+    Width = 705
+    Height = 356
+    DataSource = DM.DSCidade
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
+    TabOrder = 2
+    TitleFont.Charset = ANSI_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -13
+    TitleFont.Name = 'Arial'
+    TitleFont.Style = [fsBold]
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDCIDADE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECIDADES'
+        Title.Caption = 'Nome da Cidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sigla'
+        Title.Caption = 'Estado'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSCIDADE'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 52
+    Top = 81
+    Width = 84
+    Height = 21
+    DataField = 'STATUSCIDADE'
+    DataSource = DM.DSCidade
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 3
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 623
+    Top = 45
+    Width = 57
+    Height = 21
+    DataField = 'IDESTADO'
+    DataSource = DM.DSCidade
+    KeyField = 'IDESTADO'
+    ListField = 'SIGLAS'
+    ListSource = DM.DSEstado
+    TabOrder = 4
+  end
+  object BitBtn1: TBitBtn
+    Left = 684
+    Top = 45
+    Width = 27
+    Height = 21
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000120B0000120B00001000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+      5555555FFFFFFFFFF5555550000000000555557777777777F5555550FFFFFFFF
+      0555557F5FFFF557F5555550F0000FFF0555557F77775557F5555550FFFFFFFF
+      0555557F5FFFFFF7F5555550F000000F0555557F77777757F5555550FFFFFFFF
+      0555557F5FFFFFF7F5555550F000000F0555557F77777757F5555550FFFFFFFF
+      0555557F5FFF5557F5555550F000FFFF0555557F77755FF7F5555550FFFFF000
+      0555557F5FF5777755555550F00FF0F05555557F77557F7555555550FFFFF005
+      5555557FFFFF7755555555500000005555555577777775555555555555555555
+      5555555555555555555555555555555555555555555555555555}
+    NumGlyphs = 2
+    TabOrder = 5
+    OnClick = BitBtn1Click
+  end
+end

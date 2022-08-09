@@ -1,0 +1,156 @@
+object FItvenda: TFItvenda
+  Left = 0
+  Top = 0
+  Caption = 'FItvenda'
+  ClientHeight = 89
+  ClientWidth = 748
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 7
+    Top = 15
+    Width = 77
+    Height = 16
+    Caption = 'C'#243'digo Item'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 149
+    Top = 15
+    Width = 50
+    Height = 16
+    Caption = 'Produto'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 391
+    Top = 15
+    Width = 27
+    Height = 16
+    Caption = 'QTD'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 490
+    Top = 15
+    Width = 33
+    Height = 16
+    Caption = 'Valor'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 611
+    Top = 15
+    Width = 31
+    Height = 16
+    Caption = 'Total'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 664
+    Top = 12
+    Width = 65
+    Height = 17
+    DataField = 'TOTAL'
+    DataSource = DM.DSItemVenda
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 573
+    Top = 51
+    Width = 75
+    Height = 25
+    Caption = 'Inserir'
+    TabOrder = 0
+    OnClick = BitBtn1Click
+  end
+  object BitBtn2: TBitBtn
+    Left = 654
+    Top = 51
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 1
+    OnClick = BitBtn2Click
+  end
+  object DBEdit1: TDBEdit
+    Left = 91
+    Top = 14
+    Width = 50
+    Height = 21
+    DataField = 'IDITEMVENDA'
+    DataSource = DM.DSItemVenda
+    Enabled = False
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 424
+    Top = 14
+    Width = 53
+    Height = 21
+    DataField = 'QUANTIDADE'
+    DataSource = DM.DSItemVenda
+    TabOrder = 3
+    OnExit = DBEdit2Exit
+  end
+  object DBEdit3: TDBEdit
+    Left = 529
+    Top = 14
+    Width = 64
+    Height = 21
+    DataField = 'VALOR'
+    DataSource = DM.DSItemVenda
+    TabOrder = 4
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 205
+    Top = 14
+    Width = 180
+    Height = 21
+    DataField = 'IDPRODUTO'
+    DataSource = DM.DSItemVenda
+    KeyField = 'IDPRODUTO'
+    ListField = 'NOMEPRODUTO'
+    ListSource = DM.DSProduto
+    TabOrder = 5
+    OnExit = DBLookupComboBox1Exit
+  end
+end

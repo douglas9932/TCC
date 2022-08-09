@@ -1,0 +1,80 @@
+unit UPesquisaCaixa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, UDM;
+
+type
+  TFPesquisaCaixa = class(TForm)
+    RGPesquisa: TRadioGroup;
+    EDPesquisa: TEdit;
+    BTPesquisa: TBitBtn;
+    DBGrid1: TDBGrid;
+    procedure BTPesquisaClick(Sender: TObject);
+    procedure EDPesquisaKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPesquisaCaixa: TFPesquisaCaixa;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFPesquisaCaixa.BTPesquisaClick(Sender: TObject);
+begin
+
+
+  if (RGPesquisa.ItemIndex = 1) and (EDPesquisa.Text = '') then
+  begin
+  Showmessage('Digite um Código Para Pesquisar por Código');
+  EDPesquisa.SetFocus;
+  abort;
+  end
+  Else
+
+  With DM.QuPesquisa do
+  Begin
+		Close;
+		Sql.clear;
+    //FetchParams;
+    Params.ParamByName('pData').AsDate:=StrToDateTime(EdPesquisa.Text);
+	  Begin
+   	  Case RGPesquisa.ItemIndex of
+    	  0:SQL.Add('Select * from Caixa');
+        1:SQL.Add('Select * from Caixa where  IdCaixa = '+EdPesquisa.Text);
+       // 2:SQL.Add('Select * from Caixa where DataAbertura = '+pData);
+        3:SQL.Add('Select * from Caixa where StatusCaixa like '+#39+EdPesquisa.text+'%'+#39);
+        end;
+	    open;
+    	end;
+      DBGrid1.setfocus;
+  end;
+
+
+end;
+
+procedure TFPesquisaCaixa.EDPesquisaKeyPress(Sender: TObject; var Key: Char);
+  var
+    Data:String;
+  begin
+    Data:=EDPesquisa.Text;
+    With DM.QuPesquisa do
+  Begin
+		Close;
+		Sql.clear;
+    SQL.Add('Select * from Caixa Where data=:pData;');
+    ParamByName('pData').AsDateTime:=StrToDate(Data);
+    Prepare;
+    open;
+    DBGrid1.SetFocus;
+  end;
+end;
+end.

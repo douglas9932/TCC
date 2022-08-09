@@ -1,0 +1,308 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 1441
+  Width = 778
+  object IBDatabase1: TIBDatabase
+    Connected = True
+    DatabaseName = 'C:\TCC\Banco\BANCO.FDB'
+    Params.Strings = (
+      'user_name=SYSDBA'
+      'password=masterkey')
+    LoginPrompt = False
+    DefaultTransaction = IBTransaction1
+    ServerType = 'IBServer'
+    Left = 40
+    Top = 24
+  end
+  object IBTransaction1: TIBTransaction
+    Active = True
+    DefaultDatabase = IBDatabase1
+    Left = 144
+    Top = 24
+  end
+  object TBEstado: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 120
+  end
+  object IBEstado: TIBUpdateSQL
+    Left = 144
+    Top = 120
+  end
+  object DSEstado: TDataSource
+    Left = 240
+    Top = 120
+  end
+  object TBContasAReceber: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 632
+  end
+  object IBContasAReceber: TIBUpdateSQL
+    Left = 144
+    Top = 632
+  end
+  object DSContasAReceber: TDataSource
+    Left = 240
+    Top = 632
+  end
+  object TBCaixa: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 192
+  end
+  object TBCargo: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 272
+  end
+  object IBCargo: TIBUpdateSQL
+    Left = 144
+    Top = 272
+  end
+  object IBCaixa: TIBUpdateSQL
+    Left = 144
+    Top = 192
+  end
+  object DSCaixa: TDataSource
+    Left = 240
+    Top = 192
+  end
+  object DSCargo: TDataSource
+    Left = 240
+    Top = 272
+  end
+  object TBCidade: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 344
+  end
+  object IBCidade: TIBUpdateSQL
+    Left = 144
+    Top = 344
+  end
+  object DSCidade: TDataSource
+    Left = 240
+    Top = 344
+  end
+  object TBCliente: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 417
+  end
+  object IBCliente: TIBUpdateSQL
+    Left = 144
+    Top = 417
+  end
+  object DSCliente: TDataSource
+    Left = 240
+    Top = 417
+  end
+  object TBCompra: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 488
+  end
+  object IBCompra: TIBUpdateSQL
+    Left = 144
+    Top = 488
+  end
+  object DSCompra: TDataSource
+    Left = 240
+    Top = 488
+  end
+  object TBContasAPagar: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 560
+  end
+  object IBContasAPagar: TIBUpdateSQL
+    Left = 144
+    Top = 560
+  end
+  object DSContasAPagar: TDataSource
+    Left = 240
+    Top = 560
+  end
+  object TBFornecedor: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 704
+  end
+  object IBFornecedor: TIBUpdateSQL
+    Left = 144
+    Top = 704
+  end
+  object DSFornecedor: TDataSource
+    Left = 240
+    Top = 704
+  end
+  object TBFuncionario: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 776
+  end
+  object IBFuncionario: TIBUpdateSQL
+    Left = 144
+    Top = 776
+  end
+  object DSFuncionario: TDataSource
+    Left = 240
+    Top = 776
+  end
+  object TBItemCompra: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 832
+  end
+  object IBItemCompra: TIBUpdateSQL
+    Left = 144
+    Top = 832
+  end
+  object DSItemCompra: TDataSource
+    Left = 240
+    Top = 832
+  end
+  object TBItemVenda: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 904
+  end
+  object IBItemVenda: TIBUpdateSQL
+    Left = 144
+    Top = 904
+  end
+  object DSItemVenda: TDataSource
+    Left = 240
+    Top = 904
+  end
+  object TBMarca: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 968
+  end
+  object IBMarca: TIBUpdateSQL
+    Left = 144
+    Top = 968
+  end
+  object DSMarca: TDataSource
+    Left = 240
+    Top = 968
+  end
+  object TBPagamento: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 1032
+  end
+  object IBPagamento: TIBUpdateSQL
+    Left = 144
+    Top = 1032
+  end
+  object DSPagamento: TDataSource
+    Left = 240
+    Top = 1032
+  end
+  object TBParcelaContaAReceber: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 1104
+  end
+  object IBParcelaContaAReceber: TIBUpdateSQL
+    Left = 176
+    Top = 1104
+  end
+  object DSParcelaContaAReceber: TDataSource
+    Left = 312
+    Top = 1104
+  end
+  object TBParcelaContaAPagar: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 1168
+  end
+  object IBParcelaContaAPagar: TIBUpdateSQL
+    Left = 176
+    Top = 1168
+  end
+  object DSParcelaContaAPagar: TDataSource
+    Left = 312
+    Top = 1168
+  end
+  object DSRecebimento: TDataSource
+    Left = 240
+    Top = 1296
+  end
+  object IBRecebimento: TIBUpdateSQL
+    Left = 144
+    Top = 1296
+  end
+  object TBRecebimento: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 1296
+  end
+  object DSProduto: TDataSource
+    Left = 240
+    Top = 1232
+  end
+  object IBProduto: TIBUpdateSQL
+    Left = 144
+    Top = 1232
+  end
+  object TBProduto: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 1232
+  end
+  object DSVenda: TDataSource
+    Left = 240
+    Top = 1368
+  end
+  object IBVenda: TIBUpdateSQL
+    Left = 144
+    Top = 1368
+  end
+  object TBVenda: TIBQuery
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 40
+    Top = 1368
+  end
+end

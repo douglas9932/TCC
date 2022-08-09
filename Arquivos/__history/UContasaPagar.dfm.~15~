@@ -1,0 +1,228 @@
+object FContasaPagar: TFContasaPagar
+  Left = 0
+  Top = 0
+  Caption = 'FContasaPagar'
+  ClientHeight = 586
+  ClientWidth = 726
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 16
+    Top = 56
+    Width = 93
+    Height = 13
+    Caption = 'IDCONTASAPAGAR'
+  end
+  object Label2: TLabel
+    Left = 328
+    Top = 56
+    Width = 80
+    Height = 13
+    Caption = 'IDFORNECEDOR'
+  end
+  object Label3: TLabel
+    Left = 200
+    Top = 56
+    Width = 54
+    Height = 13
+    Caption = 'IDCOMPRA'
+  end
+  object Label4: TLabel
+    Left = 16
+    Top = 88
+    Width = 59
+    Height = 13
+    Caption = 'DESCRICAO'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 16
+    Top = 136
+    Width = 70
+    Height = 13
+    Caption = 'DATACOMPRA'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 248
+    Top = 136
+    Width = 92
+    Height = 13
+    Caption = 'DATAVENCIMENTO'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 512
+    Top = 136
+    Width = 29
+    Height = 13
+    Caption = 'HORA'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 16
+    Top = 176
+    Width = 115
+    Height = 13
+    Caption = 'VALORCONTASAPAGAR'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 304
+    Top = 176
+    Width = 128
+    Height = 13
+    Caption = 'STATUSCOMPRASAPAGAR'
+  end
+  object Label10: TLabel
+    Left = 547
+    Top = 176
+    Width = 24
+    Height = 13
+    Caption = 'TIPO'
+  end
+  object DBText1: TDBText
+    Left = 129
+    Top = 56
+    Width = 65
+    Height = 17
+    DataField = 'IDCONTASAPAGAR'
+    DataSource = DM.DSContasAPagar
+  end
+  object DBText2: TDBText
+    Left = 260
+    Top = 56
+    Width = 65
+    Height = 17
+    DataField = 'IDCOMPRA'
+    DataSource = DM.DSContasAPagar
+  end
+  object DBText3: TDBText
+    Left = 449
+    Top = 176
+    Width = 65
+    Height = 17
+    DataField = 'STATUSCOMPRASAPAGAR'
+    DataSource = DM.DSContasAPagar
+  end
+  object DBEdit4: TDBEdit
+    Left = 96
+    Top = 85
+    Width = 609
+    Height = 21
+    DataField = 'DESCRICAO'
+    DataSource = DM.DSContasAPagar
+    TabOrder = 0
+  end
+  object DBEdit5: TDBEdit
+    Left = 92
+    Top = 133
+    Width = 134
+    Height = 21
+    DataField = 'DATACOMPRA'
+    DataSource = DM.DSContasAPagar
+    TabOrder = 1
+  end
+  object DBEdit6: TDBEdit
+    Left = 346
+    Top = 133
+    Width = 134
+    Height = 21
+    DataField = 'DATAVENCIMENTO'
+    DataSource = DM.DSContasAPagar
+    TabOrder = 2
+  end
+  object DBEdit7: TDBEdit
+    Left = 547
+    Top = 133
+    Width = 134
+    Height = 21
+    DataField = 'HORA'
+    DataSource = DM.DSContasAPagar
+    TabOrder = 3
+  end
+  object DBEdit8: TDBEdit
+    Left = 137
+    Top = 173
+    Width = 134
+    Height = 21
+    DataField = 'VALORCONTASAPAGAR'
+    DataSource = DM.DSContasAPagar
+    TabOrder = 4
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 726
+    Height = 33
+    Align = alTop
+    TabOrder = 5
+    ExplicitLeft = 89
+    ExplicitTop = 312
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 20
+    Top = 216
+    Width = 693
+    Height = 345
+    DataSource = DM.DSContasAPagar
+    PopupMenu = PopupMenu1
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 414
+    Top = 52
+    Width = 291
+    Height = 21
+    DataField = 'IDFORNECEDOR'
+    DataSource = DM.DSContasAPagar
+    KeyField = 'IDFORNECEDOR'
+    ListField = 'NOMEFANTASIA'
+    ListSource = DM.DSFornecedor
+    TabOrder = 7
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 577
+    Top = 173
+    Width = 104
+    Height = 21
+    DataField = 'TIPO'
+    DataSource = DM.DSContasAPagar
+    Items.Strings = (
+      #192' VISTA'
+      #192' PRAZO')
+    TabOrder = 8
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 688
+    Top = 152
+    object PagarConta1: TMenuItem
+      Caption = 'Pagar Conta'
+      OnClick = PagarConta1Click
+    end
+    object Cancelar1: TMenuItem
+      Caption = 'Cancelar'
+    end
+  end
+end

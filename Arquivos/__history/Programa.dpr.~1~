@@ -1,0 +1,14 @@
+program Programa;
+
+uses
+  Vcl.Forms,
+  UEstado in 'UEstado.pas' {FEstado};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFEstado, FEstado);
+  Application.Run;
+end.

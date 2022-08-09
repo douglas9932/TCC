@@ -1,0 +1,127 @@
+unit UCompra;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, UFrame, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls;
+
+type
+  TFCompra = class(TForm)
+    Frame11: TFrame1;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBEdit4: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBComboBox1: TDBComboBox;
+    procedure Frame11BTSalvarClick(Sender: TObject);
+    procedure Frame11BTNovoClick(Sender: TObject);
+    procedure Frame11BTEditarClick(Sender: TObject);
+    procedure Frame11BTExcluirClick(Sender: TObject);
+    procedure Frame11BTCancelarClick(Sender: TObject);
+    procedure Frame11BTFecharClick(Sender: TObject);
+    procedure Frame11BitBtn7Click(Sender: TObject);
+    procedure Frame11BitBtn8Click(Sender: TObject);
+    procedure Frame11BitBtn9Click(Sender: TObject);
+    procedure Frame11BitBtn10Click(Sender: TObject);
+    procedure Frame11BitBtn11Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FCompra: TFCompra;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM, UPesquisaCompra;
+
+procedure TFCompra.Frame11BitBtn10Click(Sender: TObject);
+begin
+ Dm.TBCompra.Last;
+end;
+
+procedure TFCompra.Frame11BitBtn11Click(Sender: TObject);
+begin
+FPesquisaCompra.ShowModal;
+end;
+
+procedure TFCompra.Frame11BitBtn7Click(Sender: TObject);
+begin
+Dm.TBVenda.First;
+end;
+
+procedure TFCompra.Frame11BitBtn8Click(Sender: TObject);
+begin
+Dm.TBVenda.Prior;
+end;
+
+procedure TFCompra.Frame11BitBtn9Click(Sender: TObject);
+begin
+Dm.TBVenda.Next;
+end;
+
+procedure TFCompra.Frame11BTCancelarClick(Sender: TObject);
+begin
+  Frame11.BTCancelarClick(Sender);
+  DM.TBVenda.Cancel;
+end;
+
+procedure TFCompra.Frame11BTEditarClick(Sender: TObject);
+begin
+
+
+  if DM.TBVendaSTATUSVENDA.AsString = 'CONF' then
+  begin
+  Showmessage('Venda Confirmada Não Pode Ser Alterada');
+  Abort;
+  end
+  else
+
+  Frame11.BTEditarClick(Sender);
+
+
+
+  DM.TBVenda.Edit;
+end;
+
+procedure TFCompra.Frame11BTExcluirClick(Sender: TObject);
+begin
+  Frame11.BTExcluirClick(Sender);
+  DM.TBVenda.Delete;
+
+end;
+
+procedure TFCompra.Frame11BTFecharClick(Sender: TObject);
+begin
+ Close;
+end;
+
+procedure TFCompra.Frame11BTNovoClick(Sender: TObject);
+begin
+  Frame11.BTNovoClick(Sender);
+  DM.TBVenda.Insert;
+
+
+
+end;
+
+procedure TFCompra.Frame11BTSalvarClick(Sender: TObject);
+begin
+  Frame11.BTSalvarClick(Sender);
+  DM.TBVenda.Post;
+
+
+end;
+
+end.

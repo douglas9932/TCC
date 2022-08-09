@@ -1,0 +1,164 @@
+object FDescarte: TFDescarte
+  Left = 0
+  Top = 0
+  Caption = 'FDescarte'
+  ClientHeight = 509
+  ClientWidth = 721
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 42
+    Width = 33
+    Height = 13
+    Caption = 'Codigo'
+  end
+  object Label2: TLabel
+    Left = 102
+    Top = 42
+    Width = 55
+    Height = 13
+    Caption = 'Funcion'#225'rio'
+  end
+  object Label3: TLabel
+    Left = 422
+    Top = 42
+    Width = 38
+    Height = 13
+    Caption = 'Produto'
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 72
+    Width = 46
+    Height = 13
+    Caption = 'Descri'#231#227'o'
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 200
+    Width = 23
+    Height = 13
+    Caption = 'Data'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 159
+    Top = 200
+    Width = 56
+    Height = 13
+    Caption = 'Quantidade'
+    FocusControl = DBEdit6
+  end
+  object DBText1: TDBText
+    Left = 47
+    Top = 40
+    Width = 49
+    Height = 17
+    DataField = 'IDDESCARTE'
+    DataSource = DM.DSDescarte
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 721
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 721
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      Visible = False
+    end
+    inherited BTExcluir: TBitBtn
+      Enabled = False
+      Visible = False
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+  end
+  object DBEdit5: TDBEdit
+    Left = 41
+    Top = 197
+    Width = 80
+    Height = 21
+    DataField = 'DATA'
+    DataSource = DM.DSDescarte
+    TabOrder = 1
+  end
+  object DBEdit6: TDBEdit
+    Left = 221
+    Top = 197
+    Width = 62
+    Height = 21
+    DataField = 'QTD'
+    DataSource = DM.DSDescarte
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 224
+    Width = 705
+    Height = 265
+    DataSource = DM.DSDescarte
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 163
+    Top = 40
+    Width = 253
+    Height = 21
+    DataField = 'IDFUNCIONARIO'
+    DataSource = DM.DSDescarte
+    KeyField = 'IDFUNCIONARIO'
+    ListField = 'NOMEFUNCIONARIO'
+    ListSource = DM.DSFuncionario
+    TabOrder = 4
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 466
+    Top = 40
+    Width = 239
+    Height = 21
+    DataField = 'IDPRODUTO'
+    DataSource = DM.DSDescarte
+    KeyField = 'IDPRODUTO'
+    ListField = 'NOMEPRODUTO'
+    ListSource = DM.DSProduto
+    TabOrder = 5
+  end
+  object DBMemo1: TDBMemo
+    Left = 8
+    Top = 91
+    Width = 705
+    Height = 89
+    DataField = 'DESCRICAO'
+    DataSource = DM.DSDescarte
+    TabOrder = 6
+    OnKeyPress = DBMemo1KeyPress
+  end
+end

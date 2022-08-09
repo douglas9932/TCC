@@ -1,0 +1,46 @@
+unit UVenda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UFrame, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons;
+
+type
+  TFVenda = class(TForm)
+    Frame11: TFrame1;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    DBText1: TDBText;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBLookupComboBox2: TDBLookupComboBox;
+    DBComboBox1: TDBComboBox;
+    Panel2: TPanel;
+    NovoItem: TBitBtn;
+    EditarItem: TBitBtn;
+    ExcluirItem: TBitBtn;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FVenda: TFVenda;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+end.

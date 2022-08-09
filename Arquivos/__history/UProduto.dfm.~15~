@@ -1,0 +1,247 @@
+object FProduto: TFProduto
+  Left = 0
+  Top = 0
+  Caption = 'FProduto'
+  ClientHeight = 516
+  ClientWidth = 717
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 48
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
+  end
+  object Label2: TLabel
+    Left = 532
+    Top = 47
+    Width = 29
+    Height = 13
+    Caption = 'Marca'
+  end
+  object Label3: TLabel
+    Left = 125
+    Top = 47
+    Width = 83
+    Height = 13
+    Caption = 'Nome do Produto'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 84
+    Width = 73
+    Height = 13
+    Caption = 'Pre'#231'o de Custo'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 180
+    Top = 84
+    Width = 75
+    Height = 13
+    Caption = 'Pre'#231'o de Venda'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 357
+    Top = 84
+    Width = 56
+    Height = 13
+    Caption = 'Quantidade'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 553
+    Top = 84
+    Width = 38
+    Height = 13
+    Caption = 'STATUS'
+  end
+  object DBText1: TDBText
+    Left = 69
+    Top = 48
+    Width = 44
+    Height = 17
+    DataField = 'IDPRODUTO'
+    DataSource = DM.DSProduto
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 717
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 727
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+    inherited BitBtn11: TBitBtn
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 209
+    Top = 44
+    Width = 313
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMEPRODUTO'
+    DataSource = DM.DSProduto
+    TabOrder = 1
+  end
+  object DBEdit4: TDBEdit
+    Left = 87
+    Top = 81
+    Width = 82
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'PRECOCUSTO'
+    DataSource = DM.DSProduto
+    TabOrder = 2
+  end
+  object DBEdit5: TDBEdit
+    Left = 261
+    Top = 81
+    Width = 85
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'PRECOVENDA'
+    DataSource = DM.DSProduto
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 429
+    Top = 81
+    Width = 103
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'QUANTIDADE'
+    DataSource = DM.DSProduto
+    TabOrder = 4
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 595
+    Top = 81
+    Width = 114
+    Height = 21
+    DataField = 'STATUSPRODUTO'
+    DataSource = DM.DSProduto
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 5
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 567
+    Top = 44
+    Width = 142
+    Height = 21
+    DataField = 'IDMARCA'
+    DataSource = DM.DSProduto
+    KeyField = 'IDMARCA'
+    ListField = 'NOMEMARCA'
+    ListSource = DM.DSMarca
+    TabOrder = 6
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 120
+    Width = 701
+    Height = 388
+    DataSource = DM.DSProduto
+    TabOrder = 7
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDPRODUTO'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMEPRODUTO'
+        Title.Caption = 'Nome do Produto'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'marca'
+        Title.Caption = 'Marca'
+        Width = 109
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PRECOCUSTO'
+        Title.Caption = 'Preco de Custo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PRECOVENDA'
+        Title.Caption = 'Preco de Venda'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QUANTIDADE'
+        Title.Caption = 'Quantidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSPRODUTO'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+end

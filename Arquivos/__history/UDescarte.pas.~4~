@@ -1,0 +1,77 @@
+unit UDescarte;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UFrame, UDM, Data.DB, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TFDescarte = class(TForm)
+    Frame11: TFrame1;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    DBGrid1: TDBGrid;
+    DBText1: TDBText;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBLookupComboBox2: TDBLookupComboBox;
+    procedure Frame11BTNovoClick(Sender: TObject);
+    procedure Frame11BTSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FDescarte: TFDescarte;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFDescarte.Frame11BTNovoClick(Sender: TObject);
+begin
+  Frame11.BTNovoClick(Sender);
+  DM.TBdescarte.Insert;
+end;
+
+procedure TFDescarte.Frame11BTSalvarClick(Sender: TObject);
+begin
+
+
+  if DBLookupComboBox1.Text='' Then
+    begin
+      messageDLG('Escolha um Funcionario',mtInformation,[mbok],0);
+      DBLooKupComboBox1.SetFocus;
+      Abort;
+    end
+    else
+
+  if DBLookupComboBox2.Text='' Then
+    begin
+      messageDLG('Escolha um Produto',mtInformation,[mbok],0);
+      DBLooKupComboBox2.SetFocus;
+      Abort;
+    end
+    else
+
+  if DM.TBItemCompraQUANTIDADE.AsFloat<=0 then
+    begin
+      MessageDlg('Quantidade deve ser maior que zero',
+      mtInformation,[mbok],0);
+      DbEdit6.SetFocus;
+      Abort;
+
+    end;
+end;
+  Frame11.BTSalvarClick(Sender);
+end.

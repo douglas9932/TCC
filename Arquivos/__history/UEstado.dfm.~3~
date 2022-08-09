@@ -1,0 +1,107 @@
+object FEstado: TFEstado
+  Left = 0
+  Top = 0
+  Caption = 'FEstado'
+  ClientHeight = 515
+  ClientWidth = 722
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 40
+    Width = 51
+    Height = 13
+    Caption = 'IDESTADO'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 80
+    Width = 69
+    Height = 13
+    Caption = 'NOMEESTADO'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 120
+    Width = 35
+    Height = 13
+    Caption = 'SIGLAS'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 160
+    Width = 84
+    Height = 13
+    Caption = 'STATUSESTADOS'
+    FocusControl = DBEdit4
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 722
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitLeft = 16
+    ExplicitTop = 8
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 56
+    Width = 134
+    Height = 21
+    DataField = 'IDESTADO'
+    DataSource = DM.DSEstado
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 96
+    Width = 589
+    Height = 21
+    DataField = 'NOMEESTADO'
+    DataSource = DM.DSEstado
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 8
+    Top = 136
+    Width = 30
+    Height = 21
+    DataField = 'SIGLAS'
+    DataSource = DM.DSEstado
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 8
+    Top = 176
+    Width = 134
+    Height = 21
+    DataField = 'STATUSESTADOS'
+    DataSource = DM.DSEstado
+    TabOrder = 4
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 224
+    Width = 697
+    Height = 283
+    DataSource = DM.DSEstado
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+end

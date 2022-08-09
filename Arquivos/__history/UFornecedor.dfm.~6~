@@ -1,0 +1,175 @@
+object FFornecedor: TFFornecedor
+  Left = 0
+  Top = 0
+  Caption = 'FFornecedor'
+  ClientHeight = 518
+  ClientWidth = 724
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 40
+    Width = 80
+    Height = 13
+    Caption = 'IDFORNECEDOR'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 80
+    Width = 49
+    Height = 13
+    Caption = 'IDCIDADE'
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 120
+    Width = 79
+    Height = 13
+    Caption = 'NOMEFANTASIA'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 160
+    Width = 25
+    Height = 13
+    Caption = 'CNPJ'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 200
+    Width = 50
+    Height = 13
+    Caption = 'TELEFONE'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 8
+    Top = 240
+    Width = 72
+    Height = 13
+    Caption = 'RAZAOSOCIAL'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 8
+    Top = 280
+    Width = 107
+    Height = 13
+    Caption = 'STATUSFORNECEDOR'
+    FocusControl = DBEdit7
+  end
+  object DBText1: TDBText
+    Left = 8
+    Top = 57
+    Width = 65
+    Height = 17
+    DataField = 'IDFORNECEDOR'
+    DataSource = DM.DSFornecedor
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 724
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitLeft = 8
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 8
+    Top = 136
+    Width = 589
+    Height = 21
+    DataField = 'NOMEFANTASIA'
+    DataSource = DM.DSFornecedor
+    TabOrder = 1
+  end
+  object DBEdit4: TDBEdit
+    Left = 8
+    Top = 176
+    Width = 238
+    Height = 21
+    DataField = 'CNPJ'
+    DataSource = DM.DSFornecedor
+    TabOrder = 2
+  end
+  object DBEdit5: TDBEdit
+    Left = 8
+    Top = 216
+    Width = 186
+    Height = 21
+    DataField = 'TELEFONE'
+    DataSource = DM.DSFornecedor
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 8
+    Top = 256
+    Width = 589
+    Height = 21
+    DataField = 'RAZAOSOCIAL'
+    DataSource = DM.DSFornecedor
+    TabOrder = 4
+  end
+  object DBEdit7: TDBEdit
+    Left = 8
+    Top = 296
+    Width = 134
+    Height = 21
+    DataField = 'STATUSFORNECEDOR'
+    DataSource = DM.DSFornecedor
+    TabOrder = 5
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 8
+    Top = 93
+    Width = 134
+    Height = 21
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSFornecedor
+    KeyField = 'IDCIDADE'
+    ListField = 'NOMECIDADES'
+    ListSource = DM.DSCidade
+    TabOrder = 6
+  end
+end

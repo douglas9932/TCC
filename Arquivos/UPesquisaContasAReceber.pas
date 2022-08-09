@@ -1,0 +1,97 @@
+unit UPesquisaContasAReceber;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  TFPesquisaContasAReceber = class(TForm)
+    EDPesquisa: TEdit;
+    BTPesquisa: TBitBtn;
+    DBGrid1: TDBGrid;
+    RGPesquisa: TRadioGroup;
+    procedure BTPesquisaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPesquisaContasAReceber: TFPesquisaContasAReceber;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TFPesquisaContasAReceber.BTPesquisaClick(Sender: TObject);
+var
+    Data:String;
+begin
+
+  if (RGPesquisa.ItemIndex = 2) and (EDPesquisa.Text = '') then
+  begin
+  Showmessage('Digite Uma Data Para Pesquisar Por Data');
+  EDPesquisa.SetFocus;
+  abort;
+  end
+  Else
+   if (RGPesquisa.ItemIndex = 3) and (EDPesquisa.Text = '') then
+  begin
+  Showmessage('Digite Uma Data Para Pesquisar Por Data');
+  EDPesquisa.SetFocus;
+  abort;
+  end
+  Else
+    Data:=EDPesquisa.Text;
+    With DM.QuPesquisa do
+  Begin
+		Close;
+		Sql.clear;
+    Begin
+   	  Case RGPesquisa.ItemIndex of
+    0:begin
+    SQL.Add('Select * from CONTASARESCEBER');
+    Prepare;
+    open;
+    DBGrid1.SetFocus;
+    end;
+    1:begin
+    SQL.Add('Select * from  CONTASARESCEBER, Cliente where CONTASARESCEBER.IDCliente = Cliente.IDCliente and Cliente.NomeCliente like '+#39+EdPesquisa.text+'%'+#39);
+    Prepare;
+    open;
+    DBGrid1.SetFocus;
+    end;
+    2:begin
+    SQL.Add('Select * from CONTASARESCEBER Where DATAVENDA=:pData;');
+    ParamByName('pData').AsDateTime:=StrToDate(Data);
+    Prepare;
+    open;
+    DBGrid1.SetFocus;
+    end;
+    3:begin
+    SQL.Add('Select * from CONTASARESCEBER Where DATAVENCIMENTO=:pData;');
+    ParamByName('pData').AsDateTime:=StrToDate(Data);
+    Prepare;
+    open;
+    DBGrid1.SetFocus;
+    end;
+    4:begin
+    SQL.Add('Select * from  CONTASARESCEBER where STATUSContasAReceber like '+#39+EdPesquisa.text+'%'+#39);
+    Prepare;
+    open;
+    DBGrid1.SetFocus;
+    end;
+   end;
+
+  end;
+ End;
+end;
+
+
+end.

@@ -1,0 +1,193 @@
+object FContasaReceber: TFContasaReceber
+  Left = 0
+  Top = 0
+  Caption = 'FContasaReceber'
+  ClientHeight = 470
+  ClientWidth = 728
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 16
+    Top = 48
+    Width = 110
+    Height = 13
+    Caption = 'IDCONTASARESCEBER'
+  end
+  object Label2: TLabel
+    Left = 224
+    Top = 48
+    Width = 44
+    Height = 13
+    Caption = 'IDVENDA'
+  end
+  object Label3: TLabel
+    Left = 336
+    Top = 48
+    Width = 52
+    Height = 13
+    Caption = 'IDCLIENTE'
+  end
+  object Label4: TLabel
+    Left = 19
+    Top = 88
+    Width = 59
+    Height = 13
+    Caption = 'DESCRICAO'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 19
+    Top = 128
+    Width = 27
+    Height = 13
+    Caption = 'DATA'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 204
+    Top = 128
+    Width = 92
+    Height = 13
+    Caption = 'DATAVENCIMENTO'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 415
+    Top = 128
+    Width = 29
+    Height = 13
+    Caption = 'HORA'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 527
+    Top = 128
+    Width = 33
+    Height = 13
+    Caption = 'VALOR'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 19
+    Top = 160
+    Width = 131
+    Height = 13
+    Caption = 'STATUSCONTASARECEBER'
+  end
+  object DBText1: TDBText
+    Left = 132
+    Top = 48
+    Width = 65
+    Height = 17
+    DataField = 'IDCONTASARESCEBER'
+    DataSource = DM.DSContasAReceber
+  end
+  object DBText2: TDBText
+    Left = 274
+    Top = 48
+    Width = 65
+    Height = 17
+    DataField = 'IDVENDA'
+    DataSource = DM.DSContasAReceber
+  end
+  object DBText3: TDBText
+    Left = 165
+    Top = 160
+    Width = 65
+    Height = 17
+    DataField = 'STATUSCONTASARECEBER'
+    DataSource = DM.DSContasAReceber
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 722
+    Height = 33
+    TabOrder = 0
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTExcluir: TBitBtn
+      Visible = False
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+  end
+  object DBEdit4: TDBEdit
+    Left = 85
+    Top = 85
+    Width = 589
+    Height = 21
+    DataField = 'DESCRICAO'
+    DataSource = DM.DSContasAReceber
+    TabOrder = 1
+  end
+  object DBEdit5: TDBEdit
+    Left = 52
+    Top = 125
+    Width = 102
+    Height = 21
+    DataField = 'DATAVENDA'
+    DataSource = DM.DSContasAReceber
+    TabOrder = 2
+  end
+  object DBEdit6: TDBEdit
+    Left = 302
+    Top = 125
+    Width = 100
+    Height = 21
+    DataField = 'DATAVENCIMENTO'
+    DataSource = DM.DSContasAReceber
+    TabOrder = 3
+  end
+  object DBEdit7: TDBEdit
+    Left = 450
+    Top = 125
+    Width = 71
+    Height = 21
+    DataField = 'HORA'
+    DataSource = DM.DSContasAReceber
+    TabOrder = 4
+  end
+  object DBEdit8: TDBEdit
+    Left = 566
+    Top = 125
+    Width = 108
+    Height = 21
+    DataField = 'VALOR'
+    DataSource = DM.DSContasAReceber
+    TabOrder = 5
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 208
+    Width = 714
+    Height = 254
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 394
+    Top = 44
+    Width = 280
+    Height = 21
+    DataField = 'IDCLIENTE'
+    DataSource = DM.DSContasAReceber
+    KeyField = 'IDCLIENTE'
+    ListField = 'NOMECLIENTE'
+    ListSource = DM.DSCliente
+    TabOrder = 7
+  end
+end

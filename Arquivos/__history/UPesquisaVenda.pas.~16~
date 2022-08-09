@@ -1,0 +1,99 @@
+unit UPesquisaVenda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, frxClass, frxDBSet;
+
+type
+  TFPesquisaVenda = class(TForm)
+    RGPesquisa: TRadioGroup;
+    EDPesquisa: TEdit;
+    BTPesquisa: TBitBtn;
+    DBGrid1: TDBGrid;
+    procedure BTPesquisaClick(Sender: TObject);
+    procedure EDPesquisaKeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPesquisaVenda: TFPesquisaVenda;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TFPesquisaVenda.BTPesquisaClick(Sender: TObject);
+var
+  Data:String;
+
+begin
+
+
+  if (RGPesquisa.ItemIndex = 1) and (EDPesquisa.Text = '') then
+  begin
+  Showmessage('Digite um Código Para Pesquisar por Código');
+  EDPesquisa.SetFocus;
+  abort;
+  end
+  Else
+
+   Data:=EDPesquisa.Text;
+    With DM.QuPesquisa do
+  Begin
+		Close;
+		Sql.clear;
+	      Begin
+   	     Case RGPesquisa.ItemIndex of
+       0:begin
+       SQL.Add('Select * from Venda');
+       Prepare;
+       open;
+       DBGrid1.SetFocus;
+       end;
+       1:begin
+       SQL.Add('Select * from  Codigo where  IdVenda = '+EdPesquisa.Text);
+       Prepare;
+       open;
+       DBGrid1.SetFocus;
+       end;
+       4:begin
+       SQL.Add('Select * from Venda Where datavenda=:pData;');
+       ParamByName('pData').AsDateTime:=StrToDate(Data);
+       Prepare;
+       open;
+        DBGrid1.SetFocus;
+       end
+      End;
+    End;
+  End;
+end;
+
+procedure TFPesquisaVenda.EDPesquisaKeyPress(Sender: TObject; var Key: Char);
+begin
+ if RGPesquisa.ItemIndex=1 then               //seleciona a opcao nome da consulta
+   if not (Key in ['0'..'9',#8]) then       // e faz o bloqueio de numeros, espaco
+     key := #0;
+
+  if Key=#13 Then    //quando precionar entrer, ja exec. o botão pesquisar
+  BtPesquisa.click;
+end;
+
+procedure TFPesquisaVenda.FormShow(Sender: TObject);
+begin
+ With DM.QuPesquisa do
+  Begin
+		Close;
+		Sql.clear;
+  End
+end;
+
+end.

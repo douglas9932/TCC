@@ -1,0 +1,150 @@
+unit UPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, UDM, frxClass, frxDBSet;
+
+type
+  TFPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    Cadastro1: TMenuItem;
+    N1: TMenuItem;
+    Cidade1: TMenuItem;
+    Cliente1: TMenuItem;
+    Fornecedor1: TMenuItem;
+    Funcionario1: TMenuItem;
+    Produto1: TMenuItem;
+    Produto2: TMenuItem;
+    Movimento1: TMenuItem;
+    Compra1: TMenuItem;
+    Venda1: TMenuItem;
+    Descarte1: TMenuItem;
+    Financeiro1: TMenuItem;
+    ContasaPagar1: TMenuItem;
+    ContasaReceber1: TMenuItem;
+    Recebimento1: TMenuItem;
+    Pagamento1: TMenuItem;
+    Caixa1: TMenuItem;
+    Consultas1: TMenuItem;
+    Fechar1: TMenuItem;
+    Image1: TImage;
+    Cargo1: TMenuItem;
+    frxRVenda: TfrxReport;
+    frxDBVenda: TfrxDBDataset;
+    RelatrioVenda1: TMenuItem;
+    procedure N1Click(Sender: TObject);
+    procedure Cidade1Click(Sender: TObject);
+    procedure Fechar1Click(Sender: TObject);
+    procedure Cliente1Click(Sender: TObject);
+    procedure Fornecedor1Click(Sender: TObject);
+    procedure Funcionario1Click(Sender: TObject);
+    procedure Produto2Click(Sender: TObject);
+    procedure Produto1Click(Sender: TObject);
+    procedure Cargo1Click(Sender: TObject);
+    procedure Venda1Click(Sender: TObject);
+    procedure Compra1Click(Sender: TObject);
+    procedure Descarte1Click(Sender: TObject);
+    procedure ContasaReceber1Click(Sender: TObject);
+    procedure Caixa1Click(Sender: TObject);
+    procedure ContasaPagar1Click(Sender: TObject);
+    procedure RelatrioVenda1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPrincipal: TFPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses UCidade, UEstado, UCliente, UFornecedor, UFuncionario, UProduto, UMarca,
+  UCargo, UVenda, UCompra, UDescarte, UContasaReceber, UCaixa, UContasaPagar,
+  Utesterel;
+
+procedure TFPrincipal.Caixa1Click(Sender: TObject);
+begin
+     FCaixa.Showmodal;
+end;
+
+procedure TFPrincipal.Cargo1Click(Sender: TObject);
+begin
+  FCargo.Showmodal;
+end;
+
+procedure TFPrincipal.Cidade1Click(Sender: TObject);
+begin
+  FCidade.Showmodal;
+end;
+
+procedure TFPrincipal.Cliente1Click(Sender: TObject);
+begin
+    FCliente.Showmodal;
+end;
+
+procedure TFPrincipal.Compra1Click(Sender: TObject);
+begin
+      FCompra.ShowModal;
+end;
+
+procedure TFPrincipal.ContasaPagar1Click(Sender: TObject);
+begin
+      FContasaPagar.ShowModal;
+end;
+
+procedure TFPrincipal.ContasaReceber1Click(Sender: TObject);
+begin
+  FContasaReceber.ShowModal;
+  end;
+
+procedure TFPrincipal.Descarte1Click(Sender: TObject);
+begin
+  FDescarte.Showmodal;
+end;
+
+procedure TFPrincipal.Fechar1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFPrincipal.Fornecedor1Click(Sender: TObject);
+begin
+  FFornecedor.Showmodal;
+end;
+
+procedure TFPrincipal.Funcionario1Click(Sender: TObject);
+begin
+    FFuncionario.Showmodal;
+end;
+
+procedure TFPrincipal.N1Click(Sender: TObject);
+begin
+    FEstado.Showmodal;
+end;
+                  procedure TFPrincipal.Produto1Click(Sender: TObject);
+begin
+  FMarca.Showmodal;
+end;
+
+procedure TFPrincipal.Produto2Click(Sender: TObject);
+begin
+  FProduto.Showmodal;
+end;
+
+procedure TFPrincipal.RelatrioVenda1Click(Sender: TObject);
+begin
+      frxRVenda.ShowReport();
+end;
+
+procedure TFPrincipal.Venda1Click(Sender: TObject);
+begin
+ FVenda.Showmodal;
+end;
+
+end.

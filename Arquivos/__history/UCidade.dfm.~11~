@@ -1,0 +1,174 @@
+object FCidade: TFCidade
+  Left = 0
+  Top = 0
+  Caption = 'FCidade'
+  ClientHeight = 474
+  ClientWidth = 727
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 48
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
+  end
+  object Label2: TLabel
+    Left = 518
+    Top = 48
+    Width = 33
+    Height = 13
+    Caption = 'Estado'
+  end
+  object Label3: TLabel
+    Left = 120
+    Top = 48
+    Width = 78
+    Height = 13
+    Caption = 'Nome da Cidade'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 88
+    Width = 31
+    Height = 13
+    Caption = 'Status'
+  end
+  object DBText1: TDBText
+    Left = 56
+    Top = 48
+    Width = 49
+    Height = 17
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSCidade
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 727
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 730
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+    inherited BitBtn11: TBitBtn
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 204
+    Top = 45
+    Width = 293
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMECIDADES'
+    DataSource = DM.DSCidade
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 120
+    Width = 714
+    Height = 345
+    DataSource = DM.DSCidade
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDCIDADE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECIDADES'
+        Title.Caption = 'Nome da Cidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sigla'
+        Title.Caption = 'Estado'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSCIDADE'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 45
+    Top = 85
+    Width = 84
+    Height = 21
+    DataField = 'STATUSCIDADE'
+    DataSource = DM.DSCidade
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 3
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 560
+    Top = 45
+    Width = 57
+    Height = 21
+    DataField = 'IDESTADO'
+    DataSource = DM.DSCidade
+    KeyField = 'IDESTADO'
+    ListField = 'SIGLAS'
+    ListSource = DM.DSEstado
+    TabOrder = 4
+  end
+end

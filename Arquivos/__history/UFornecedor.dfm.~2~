@@ -1,0 +1,26 @@
+object FFornecedor: TFFornecedor
+  Left = 0
+  Top = 0
+  Caption = 'FFornecedor'
+  ClientHeight = 518
+  ClientWidth = 724
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 724
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitLeft = 8
+  end
+end

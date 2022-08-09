@@ -1,0 +1,510 @@
+object FCliente: TFCliente
+  Left = 0
+  Top = 0
+  Caption = 'FCliente'
+  ClientHeight = 488
+  ClientWidth = 776
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 42
+    Width = 45
+    Height = 16
+    Caption = 'C'#243'digo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 7
+    Top = 135
+    Width = 45
+    Height = 16
+    Caption = 'Cidade'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 115
+    Top = 42
+    Width = 37
+    Height = 16
+    Caption = 'Nome'
+    FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 161
+    Top = 73
+    Width = 26
+    Height = 16
+    Caption = 'CPF'
+    FocusControl = DBEdit4
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 491
+    Top = 73
+    Width = 33
+    Height = 16
+    Caption = 'Sexo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 292
+    Top = 73
+    Width = 107
+    Height = 16
+    Caption = 'Data Nascimento'
+    FocusControl = DBEdit6
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 376
+    Top = 104
+    Width = 60
+    Height = 16
+    Caption = 'Endere'#231'o'
+    FocusControl = DBEdit7
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 583
+    Top = 73
+    Width = 55
+    Height = 16
+    Caption = 'Telefone'
+    FocusControl = DBEdit8
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 7
+    Top = 104
+    Width = 36
+    Height = 16
+    Caption = 'Email'
+    FocusControl = DBEdit9
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 7
+    Top = 73
+    Width = 19
+    Height = 16
+    Caption = 'RG'
+    FocusControl = DBEdit10
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 303
+    Top = 135
+    Width = 39
+    Height = 16
+    Caption = 'Status'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 56
+    Top = 44
+    Width = 43
+    Height = 17
+    DataField = 'IDCLIENTE'
+    DataSource = DM.DSCliente
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 18
+    Top = -1
+    Width = 776
+    Height = 33
+    Align = alCustom
+    TabOrder = 0
+    ExplicitLeft = 18
+    ExplicitTop = -1
+    ExplicitWidth = 776
+    ExplicitHeight = 33
+    inherited BTNovo: TBitBtn
+      Width = 73
+      OnClick = Frame11BTNovoClick
+      ExplicitWidth = 73
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      Glyph.Data = {
+        DE000000424DDE000000000000003E0000002800000023000000140000000100
+        010000000000A000000000000000000000000200000002000000FFFFFF000000
+        00000000000000000000000000000000000000E000000000000000E0C0000000
+        000000E1E0000000000000E3E0000000000000E7C0000000000000EF80000000
+        000000FF80000000000000FFFFFC0000000000FFFFFC0000000000FFFFFC0000
+        000000FF00000000000000E780000000000000E3C0000000000000E1E0000000
+        000000E0E0000000000000E04000000000000000000000000000000000000000
+        0000}
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      Glyph.Data = {
+        DE000000424DDE000000000000003E0000002800000023000000140000000100
+        010000000000A000000000000000000000000200000002000000FFFFFF000000
+        0000000000000000000000000000000000000000000000000000000400000000
+        0000000E000000000000001E000000000000007C00000000000000F800000000
+        000001F000000000000003FFFFFC0000000003FFFFFC0000000001FFFFFC0000
+        000000F80000000000000078000000000000003C000000000000001E00000000
+        0000000E00000000000000040000000000000000000000000000000000000000
+        0000}
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      Glyph.Data = {
+        DE000000424DDE000000000000003E0000002800000023000000140000000100
+        010000000000A000000000000000000000000200000002000000FFFFFF000000
+        0000000000000000000000000000000000000000000000000000000006000000
+        000000000F000000000000000F8000000000000007C000000000000001E00000
+        0000000001F00000000003FFFFF80000000003FFFFFC0000000003FFFFF80000
+        0000000001F000000000000003E000000000000007C00000000000000F800000
+        0000000007000000000000000200000000000000000000000000000000000000
+        0000}
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      Glyph.Data = {
+        DE000000424DDE000000000000003E0000002800000023000000140000000100
+        010000000000A000000000000000000000000200000002000000FFFFFF000000
+        0000000000000000000000000000000000000000003800000000000030780000
+        0000000078780000000000003C780000000000001E780000000000000F780000
+        000000000FF80000000003FFFFF80000000003FFFFF80000000003FFFFF80000
+        000000000FF80000000000001F780000000000003E780000000000007C780000
+        0000000038780000000000001078000000000000000000000000000000000000
+        0000}
+      OnClick = Frame11BitBtn10Click
+    end
+    inherited BitBtn11: TBitBtn
+      Glyph.Data = {
+        C6060000424DC60600000000000036000000280000001C000000140000000100
+        1800000000009006000000000000000000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000
+        0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FF000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000
+        00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000FFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000
+        0000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000
+        000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000
+        00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000
+        00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000
+        0000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFF000000000000000000000000FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000
+        000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000
+        00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000
+        000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000
+        000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFF}
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 158
+    Top = 41
+    Width = 555
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMECLIENTE'
+    DataSource = DM.DSCliente
+    TabOrder = 1
+  end
+  object DBEdit4: TDBEdit
+    Left = 193
+    Top = 72
+    Width = 93
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'CPF'
+    DataSource = DM.DSCliente
+    MaxLength = 14
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 404
+    Top = 72
+    Width = 81
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'DATANASCIMENTO'
+    DataSource = DM.DSCliente
+    MaxLength = 10
+    TabOrder = 4
+  end
+  object DBEdit7: TDBEdit
+    Left = 438
+    Top = 103
+    Width = 334
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'ENDERECO'
+    DataSource = DM.DSCliente
+    TabOrder = 8
+  end
+  object DBEdit8: TDBEdit
+    Left = 643
+    Top = 72
+    Width = 91
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'TELEFONE'
+    DataSource = DM.DSCliente
+    MaxLength = 14
+    TabOrder = 6
+  end
+  object DBEdit9: TDBEdit
+    Left = 47
+    Top = 103
+    Width = 323
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'EMAIL'
+    DataSource = DM.DSCliente
+    TabOrder = 7
+  end
+  object DBEdit10: TDBEdit
+    Left = 34
+    Top = 72
+    Width = 100
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'RG'
+    DataSource = DM.DSCliente
+    MaxLength = 12
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 58
+    Top = 134
+    Width = 223
+    Height = 21
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSCliente
+    KeyField = 'IDCIDADE'
+    ListField = 'NOMECIDADES'
+    ListSource = DM.DSCidade
+    TabOrder = 9
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 529
+    Top = 72
+    Width = 48
+    Height = 21
+    DataField = 'SEXO'
+    DataSource = DM.DSCliente
+    Items.Strings = (
+      'M'
+      'F')
+    TabOrder = 5
+  end
+  object DBComboBox2: TDBComboBox
+    Left = 349
+    Top = 134
+    Width = 91
+    Height = 21
+    DataField = 'STATUSCLIENTE'
+    DataSource = DM.DSCliente
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 10
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 168
+    Width = 763
+    Height = 315
+    DataSource = DM.DSCliente
+    TabOrder = 11
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDCLIENTE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECLIENTE'
+        Title.Caption = 'Nome Cliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'RG'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CPF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DATANASCIMENTO'
+        Title.Caption = 'Data de Nascimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TELEFONE'
+        Title.Caption = 'Telefone'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SEXO'
+        Title.Caption = 'Sexo'
+        Width = 43
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMAIL'
+        Title.Caption = 'Email'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cidade'
+        Title.Caption = 'Cidade'
+        Width = 187
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ENDERECO'
+        Title.Caption = 'Endere'#231'o'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSCLIENTE'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+end

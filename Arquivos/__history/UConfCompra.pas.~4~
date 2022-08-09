@@ -1,0 +1,126 @@
+unit UConfCompra;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UDM, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.DBCtrls;
+
+type
+  TFConfCompra = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    LBTroco: TLabel;
+    DBText1: TDBText;
+    DBComboBox1: TDBComboBox;
+    EDValorRecebido: TEdit;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    procedure EDValorRecebidoExit(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FConfCompra: TFConfCompra;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFConfCompra.BitBtn1Click(Sender: TObject);
+begin
+
+    if DBComboBox1.Text='' then
+    begin
+    Showmessage ('Escolha o Tipo De Condição Da Venda');
+    Abort;
+    end
+    else
+    if (EDValorRecebido.Text='') or (EDValorRecebido.Text='0') then
+    begin
+    Showmessage('Informe o Valor Recebido');
+    EDValorRecebido.SetFocus;
+    Abort;
+    end
+    else
+
+    if DM.TBCompraSTATUSCOMPRA.AsString='NÃO CONF' then
+      {With DM.TBItemCompra do
+        begin
+          First;
+          While not EOF do
+            begin;
+              DM.TBProduto.Locate('IDPRODUTO',DM.TBItemCompraIDPRODUTO.AsInteger,
+                []);
+              if (DM.TBProdutoQUANTIDADE.AsFloat-
+                  DM.TBItemCompraQUANTIDADE.AsFloat)<=0 Then
+                begin
+                  MessageDLG('Não há estoque suficiente para o produto'+#13
+                    +DM.TBProdutoNOMEPRODUTO.AsString,
+                  mtinformation,[mbok],0);
+                  Abort;
+                end;
+              Next;
+            end;
+          end;}
+
+    with DM.TBItemCompra do
+        begin
+          First;
+          While not EOF do
+            begin
+              DM.TBProduto.Locate('IDPRODUTO',DM.TBItemCompraIDPRODUTO.AsInteger,
+                []);
+              DM.TBProduto.Edit;
+              DM.TBProdutoQUANTIDADE.AsFloat :=
+                DM.TBProdutoQUANTIDADE.AsFloat +
+                FieldByName('QUANTIDADE').AsFloat;
+              DM.TBProdutoPRECOCUSTO.AsFloat:= (DM.TBItemVendaVALOR.AsFloat+DM.TBProdutoPRECOCUSTO.AsFloat)/2;
+              DM.TBProduto.Post;
+
+              Next;
+            end;
+          end;
+
+    DM.TBProduto.Refresh;
+    DM.TBCompra.Edit;
+    DM.TBCompraSTATUSCOMPRA.AsString:= 'CONF';
+    DM.TBCompra.Post;
+    Close;
+
+
+
+end;
+
+procedure TFConfCompra.BitBtn2Click(Sender: TObject);
+begin
+DM.TBVenda.Cancel;
+        Close;
+end;
+
+procedure TFConfCompra.EDValorRecebidoExit(Sender: TObject);
+begin
+
+    if StrtoFloat (EDValorRecebido.Text)>=
+      StrtoFloat (DBText1.Caption)
+    then
+
+    Begin
+    LBTroco.Caption:= FloattoStr
+    (StrtoFloat (EDValorRecebido.Text)-
+    StrtoFloat (DBText1.Caption));
+
+    End
+    else
+    Showmessage('O Valor Recebido Não Pode Ser Menor Que O Valor Total Da Venda') ;
+end;
+
+end.

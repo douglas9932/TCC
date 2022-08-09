@@ -1,0 +1,192 @@
+unit UConfCompra;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UDM, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.DBCtrls;
+
+type
+  TFConfCompra = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    LBTroco: TLabel;
+    DBText1: TDBText;
+    DBComboBox1: TDBComboBox;
+    EDValorRecebido: TEdit;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    procedure EDValorRecebidoExit(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FConfCompra: TFConfCompra;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFConfCompra.BitBtn1Click(Sender: TObject);
+begin
+
+     if DM.TBCaixaSTATUSCAIXA.AsString = 'FECHADO' then
+    begin
+      Showmessage('Caixa Fechado');
+      Abort;
+    end
+    else
+    if DM.TBCaixaSALDO.AsFloat < DM.TBCompratotalcompra.ASFloat then
+    Begin
+      Showmessage('Nao Há Saldo no Caixa');
+      Abort;
+    End
+
+    else
+    if DBComboBox1.Text='' then
+    begin
+    Showmessage ('Escolha o Tipo De Condição Da Venda');
+    Abort;
+    end
+    else
+    if (EDValorRecebido.Text='') or (EDValorRecebido.Text='0') then
+    begin
+    Showmessage('Informe o Valor Recebido');
+    EDValorRecebido.SetFocus;
+    Abort;
+    end
+    else
+
+    if DM.TBCompraSTATUSCOMPRA.AsString='NÃO CONF' then
+      {With DM.TBItemCompra do
+        begin
+          First;
+          While not EOF do
+            begin;
+              DM.TBProduto.Locate('IDPRODUTO',DM.TBItemCompraIDPRODUTO.AsInteger,
+                []);
+              if (DM.TBProdutoQUANTIDADE.AsFloat-
+                  DM.TBItemCompraQUANTIDADE.AsFloat)<=0 Then
+                begin
+                  MessageDLG('Não há estoque suficiente para o produto'+#13
+                    +DM.TBProdutoNOMEPRODUTO.AsString,
+                  mtinformation,[mbok],0);
+                  Abort;
+                end;
+              Next;
+            end;
+          end;}
+
+    with DM.TBItemCompra do
+        begin
+          First;
+          While not EOF do
+            begin
+              DM.TBProduto.Locate('IDPRODUTO',DM.TBItemCompraIDPRODUTO.AsInteger,
+                []);
+              DM.TBProduto.Edit;
+              DM.TBProdutoQUANTIDADE.AsFloat :=
+                DM.TBProdutoQUANTIDADE.AsFloat +
+                FieldByName('QUANTIDADE').AsFloat;
+              DM.TBProdutoPRECOCUSTO.AsFloat:= (DM.TBItemCompraVALORITEMCOMPRA.AsFloat+DM.TBProdutoPRECOCUSTO.AsFloat)/2;
+              DM.TBProduto.Post;
+
+              Next;
+            end;
+          end;
+
+
+
+    DM.TBProduto.Refresh;
+    DM.TBCompra.Edit;
+    DM.TBCompraSTATUSCOMPRA.AsString:= 'CONF';
+    DM.TBCompra.Post;
+    Close;
+
+
+    //gera conta a pagar
+    DM.TBContasAPagar.Insert;
+    DM.TBContasAPagarIDCOMPRA.AsInteger:=
+    DM.TBCompraIDCOMPRA.AsInteger;
+    DM.TBContasAPagarDATACOMPRA.AsDateTime:=Date;
+    if DM.TBCompraTIPO.AsString = 'À Vista' then
+    begin
+    DM.TBContasAPagarDATAVENCIMENTO.AsDateTime:=Date;
+    end;
+
+    DM.TBContasAPagarDESCRICAO.AsString:= 'Conta À Receber De Compra';
+    DM.TBContasAPagarVALORCONTASAPAGAR.AsFloat:=
+    DM.TBCompratotalcompra.AsFloat;
+    DM.TBContasAPagarHORA.AsDateTime:=Time;
+    DM.TBContasAPagarSTATUSCOMPRASAPAGAR.AsString:='CONF';
+    DM.TBContasAPagarIDFORNECEDOR.AsInteger:=
+    DM.TBCompraIDFORNECEDOR.AsInteger;
+    DM.TBContasAPagarTIPO.AsString:= 'Compra';
+    DM.TBContasAPagar.Post;
+    Dm.TBContasAPagar.Refresh;
+
+    //gera parcela conta a pagar
+    DM.TBParcelaContaAPagar.Insert;
+    DM.TBParcelaContaAPagarIDCONTASAPAGAR.AsInteger:=
+    DM.TBContasAPagarIDCONTASAPAGAR.AsInteger;
+    DM.TBParcelaContaAPagarVALOR.AsFloat:=
+    DM.TBContasAPagarVALORCONTASAPAGAR.AsFloat;
+    DM.TBParcelaContaAPagarSTATUSPARCELASCONTASAPAGAR.AsString:='PAGA';
+    DM.TBParcelaContaAPagar.Post;
+    DM.TBParcelaContaAPagar.Refresh;
+
+    //gera o pagamento
+    DM.TBPagamento.Insert;
+    DM.TBPagamentoIDPARCELASCONTASAPAGAR.AsInteger:=
+    DM.TBParcelaContaAPagarIDPARCELASCONTASAPAGAR.AsInteger;
+    DM.TBPagamentoDATAPAGAMENTO.AsDateTime:= DATE;
+    DM.TBPagamentoHORA.AsDateTime:= TIME;
+    DM.TBPagamentoVALORDOPAGAMENTO.AsFloat:= DM.TBParcelaContaAPagarVALOR.AsFloat;
+    DM.TBPagamentoVALORDOPAGAMENTO.AsFloat:= DM.TBParcelaContaAPagarVALOR.AsFloat;
+    DM.TBPagamento.Post;
+    DM.TBPagamento.Refresh;
+
+    //gera caixa
+    DM.TBCaixa.Edit;
+    DM.TBCaixaIDPAGAMENTO.AsInteger := DM.TBPagamentoIDPAGAMENTO.AsInteger;
+    DM.TBCaixaVALORSAIDA.AsFloat:= DM.TBPagamentoVALORDOPAGAMENTO.AsFloat;
+    DM.TBCaixaSALDO.AsFloat:= DM.TBCaixaSALDO.AsFloat-
+    DM.TBCaixaVALORSAIDA.AsFloat;
+    DM.TBCaixa.Post;
+    DM.TBCaixa.Refresh;
+
+
+end;
+
+procedure TFConfCompra.BitBtn2Click(Sender: TObject);
+begin
+DM.TBVenda.Cancel;
+        Close;
+end;
+
+procedure TFConfCompra.EDValorRecebidoExit(Sender: TObject);
+begin
+
+    if StrtoFloat (EDValorRecebido.Text)>=
+      StrtoFloat (DBText1.Caption)
+    then
+
+    Begin
+    LBTroco.Caption:= FloattoStr
+    (StrtoFloat (EDValorRecebido.Text)-
+    StrtoFloat (DBText1.Caption));
+
+    End
+    else
+    Showmessage('O Valor Recebido Não Pode Ser Menor Que O Valor Total Da Venda') ;
+end;
+
+end.

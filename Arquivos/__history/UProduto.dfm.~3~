@@ -1,0 +1,174 @@
+object FProduto: TFProduto
+  Left = 0
+  Top = 0
+  Caption = 'FProduto'
+  ClientHeight = 516
+  ClientWidth = 727
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 48
+    Width = 60
+    Height = 13
+    Caption = 'IDPRODUTO'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 88
+    Width = 47
+    Height = 13
+    Caption = 'IDMARCA'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 128
+    Width = 78
+    Height = 13
+    Caption = 'NOMEPRODUTO'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 168
+    Width = 68
+    Height = 13
+    Caption = 'PRECOCUSTO'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 208
+    Width = 67
+    Height = 13
+    Caption = 'PRECOVENDA'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 8
+    Top = 248
+    Width = 66
+    Height = 13
+    Caption = 'QUANTIDADE'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 8
+    Top = 288
+    Width = 87
+    Height = 13
+    Caption = 'STATUSPRODUTO'
+    FocusControl = DBEdit7
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 727
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 721
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 64
+    Width = 134
+    Height = 21
+    DataField = 'IDPRODUTO'
+    DataSource = DM.DSProduto
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 104
+    Width = 134
+    Height = 21
+    DataField = 'IDMARCA'
+    DataSource = DM.DSProduto
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 8
+    Top = 144
+    Width = 589
+    Height = 21
+    DataField = 'NOMEPRODUTO'
+    DataSource = DM.DSProduto
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 8
+    Top = 184
+    Width = 134
+    Height = 21
+    DataField = 'PRECOCUSTO'
+    DataSource = DM.DSProduto
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 8
+    Top = 224
+    Width = 134
+    Height = 21
+    DataField = 'PRECOVENDA'
+    DataSource = DM.DSProduto
+    TabOrder = 5
+  end
+  object DBEdit6: TDBEdit
+    Left = 8
+    Top = 264
+    Width = 134
+    Height = 21
+    DataField = 'QUANTIDADE'
+    DataSource = DM.DSProduto
+    TabOrder = 6
+  end
+  object DBEdit7: TDBEdit
+    Left = 8
+    Top = 304
+    Width = 134
+    Height = 21
+    DataField = 'STATUSPRODUTO'
+    DataSource = DM.DSProduto
+    TabOrder = 7
+  end
+end

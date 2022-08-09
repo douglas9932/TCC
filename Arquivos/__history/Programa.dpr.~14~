@@ -1,0 +1,35 @@
+program Programa;
+
+uses
+  Vcl.Forms,
+  UEstado in 'UEstado.pas' {FEstado},
+  UCidade in 'UCidade.pas' {FCidade},
+  UDM in 'UDM.pas' {DM: TDataModule},
+  UFrame in 'UFrame.pas' {Frame1: TFrame},
+  UPrincipal in 'UPrincipal.pas' {FPrincipal},
+  UCliente in 'UCliente.pas' {FCliente},
+  UFornecedor in 'UFornecedor.pas' {FFornecedor},
+  UFuncionario in 'UFuncionario.pas' {FFuncionario},
+  UProduto in 'UProduto.pas' {FProduto},
+  UMarca in 'UMarca.pas' {FMarca},
+  UCargo in 'UCargo.pas' {FCargo},
+  UVenda in 'UVenda.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFPrincipal, FPrincipal);
+  Application.CreateForm(TFCidade, FCidade);
+  Application.CreateForm(TFEstado, FEstado);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFCliente, FCliente);
+  Application.CreateForm(TFFornecedor, FFornecedor);
+  Application.CreateForm(TFFuncionario, FFuncionario);
+  Application.CreateForm(TFProduto, FProduto);
+  Application.CreateForm(TFMarca, FMarca);
+  Application.CreateForm(TFCargo, FCargo);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

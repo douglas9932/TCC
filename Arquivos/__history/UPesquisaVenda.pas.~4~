@@ -1,0 +1,65 @@
+unit UPesquisaVenda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  TFPesquisaVenda = class(TForm)
+    RGPesquisa: TRadioGroup;
+    EDPesquisa: TEdit;
+    BTPesquisa: TBitBtn;
+    DBGrid1: TDBGrid;
+    procedure BTPesquisaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPesquisaVenda: TFPesquisaVenda;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TFPesquisaVenda.BTPesquisaClick(Sender: TObject);
+begin
+
+
+  if (RGPesquisa.ItemIndex = 1) and (EDPesquisa.Text = '') then
+  begin
+  Showmessage('Digite um Código Para Pesquisar por Código');
+  EDPesquisa.SetFocus;
+  abort;
+  end
+  Else
+
+  With DM.QuPesquisa do
+  Begin
+		Close;
+		Sql.clear;
+	  Begin
+   	  Case RGPesquisa.ItemIndex of
+    	  0:SQL.Add('Select * from Venda');
+        1:SQL.Add('Select * from Venda where  IdVenda = '+EdPesquisa.Text);
+        2:SQL.Add('Select * from Venda, Funcionario where Funcionario.IDFuncionario = Venda.IDFuncionario and Funcionario.NomeFuncionario like '+#39+EdPesquisa.text+'%'+#39);
+        3:SQL.Add('Select * from Venda, Cliente where Cliente.IDCliente = Venda.IDCliente and Cliente.NomeCliente like '+#39+EdPesquisa.text+'%'+#39);
+        4:SQL.Add('Select * from Venda where DATAVENDA  = '+datetostr(EdPesquisa.Text));
+        //:SQL.Add('Select * from Venda where CNPJ like '+#39+EdPesquisa.text+'%'+#39);
+        //:
+        //6:SQL.Add('Select * from Venda where StatusVenda like '+#39+EdPesquisa.text+'%'+#39);
+        end;
+	    open;
+    	end;
+      DBGrid1.setfocus;
+  end;
+end;
+
+end.

@@ -1,0 +1,189 @@
+object FEstado: TFEstado
+  Left = 0
+  Top = 0
+  Caption = 'FEstado'
+  ClientHeight = 515
+  ClientWidth = 722
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 40
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 80
+    Width = 78
+    Height = 13
+    Caption = 'Nome do Estado'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 120
+    Width = 22
+    Height = 13
+    Caption = 'Sigla'
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 160
+    Width = 31
+    Height = 13
+    Caption = 'Status'
+  end
+  object DBText1: TDBText
+    Left = 8
+    Top = 56
+    Width = 65
+    Height = 17
+    DataField = 'IDESTADO'
+    DataSource = DM.DSEstado
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 722
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    inherited BTNovo: TBitBtn
+      OnClick = Frame11BTNovoClick
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 96
+    Width = 589
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMEESTADO'
+    DataSource = DM.DSEstado
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 224
+    Width = 697
+    Height = 283
+    DataSource = DM.DSEstado
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDESTADO'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMEESTADO'
+        Title.Caption = 'Nome do Estado'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SIGLAS'
+        Title.Caption = 'Sigla'
+        Width = 33
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSESTADOS'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 8
+    Top = 136
+    Width = 49
+    Height = 21
+    DataField = 'SIGLAS'
+    DataSource = DM.DSEstado
+    Items.Strings = (
+      'AC'
+      'AL'
+      'AP'
+      'AM'
+      'BA'
+      'CE'
+      'ES'
+      'GO'
+      'MA'
+      'MT'
+      'MS'
+      'MG'
+      'PA'
+      'PB'
+      'PE'
+      'PI'
+      'PR'
+      'RJ'
+      'RN'
+      'RS'
+      'RO'
+      'RR'
+      'SC'
+      'SE'
+      'SP'
+      'TO')
+    TabOrder = 3
+  end
+  object DBComboBox2: TDBComboBox
+    Left = 8
+    Top = 179
+    Width = 97
+    Height = 21
+    DataField = 'STATUSESTADOS'
+    DataSource = DM.DSEstado
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 4
+  end
+end

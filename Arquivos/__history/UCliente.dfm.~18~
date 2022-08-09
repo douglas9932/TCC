@@ -1,0 +1,415 @@
+object FCliente: TFCliente
+  Left = 0
+  Top = 0
+  Caption = 'FCliente'
+  ClientHeight = 488
+  ClientWidth = 776
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 42
+    Width = 45
+    Height = 16
+    Caption = 'C'#243'digo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 7
+    Top = 135
+    Width = 45
+    Height = 16
+    Caption = 'Cidade'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 115
+    Top = 42
+    Width = 37
+    Height = 16
+    Caption = 'Nome'
+    FocusControl = DBEdit3
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 161
+    Top = 73
+    Width = 26
+    Height = 16
+    Caption = 'CPF'
+    FocusControl = DBEdit4
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 491
+    Top = 73
+    Width = 33
+    Height = 16
+    Caption = 'Sexo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 292
+    Top = 73
+    Width = 107
+    Height = 16
+    Caption = 'Data Nascimento'
+    FocusControl = DBEdit6
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 376
+    Top = 104
+    Width = 60
+    Height = 16
+    Caption = 'Endere'#231'o'
+    FocusControl = DBEdit7
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 583
+    Top = 73
+    Width = 55
+    Height = 16
+    Caption = 'Telefone'
+    FocusControl = DBEdit8
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 7
+    Top = 104
+    Width = 36
+    Height = 16
+    Caption = 'Email'
+    FocusControl = DBEdit9
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 7
+    Top = 73
+    Width = 19
+    Height = 16
+    Caption = 'RG'
+    FocusControl = DBEdit10
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 303
+    Top = 135
+    Width = 39
+    Height = 16
+    Caption = 'Status'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 56
+    Top = 44
+    Width = 43
+    Height = 17
+    DataField = 'IDCLIENTE'
+    DataSource = DM.DSCliente
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  inline Frame11: TFrame1
+    Left = 0
+    Top = 0
+    Width = 776
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 779
+    inherited BTNovo: TBitBtn
+      Width = 73
+      OnClick = Frame11BTNovoClick
+      ExplicitWidth = 73
+    end
+    inherited BTEditar: TBitBtn
+      OnClick = Frame11BTEditarClick
+    end
+    inherited BTExcluir: TBitBtn
+      OnClick = Frame11BTExcluirClick
+    end
+    inherited BTCancelar: TBitBtn
+      OnClick = Frame11BTCancelarClick
+    end
+    inherited BTSalvar: TBitBtn
+      OnClick = Frame11BTSalvarClick
+    end
+    inherited BTFechar: TBitBtn
+      OnClick = Frame11BTFecharClick
+    end
+    inherited BitBtn7: TBitBtn
+      OnClick = Frame11BitBtn7Click
+    end
+    inherited BitBtn8: TBitBtn
+      OnClick = Frame11BitBtn8Click
+    end
+    inherited BitBtn9: TBitBtn
+      OnClick = Frame11BitBtn9Click
+    end
+    inherited BitBtn10: TBitBtn
+      OnClick = Frame11BitBtn10Click
+    end
+    inherited BitBtn11: TBitBtn
+      OnClick = Frame11BitBtn11Click
+    end
+  end
+  object DBEdit3: TDBEdit
+    Left = 158
+    Top = 41
+    Width = 555
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'NOMECLIENTE'
+    DataSource = DM.DSCliente
+    TabOrder = 1
+  end
+  object DBEdit4: TDBEdit
+    Left = 193
+    Top = 72
+    Width = 93
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'CPF'
+    DataSource = DM.DSCliente
+    MaxLength = 14
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 404
+    Top = 72
+    Width = 81
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'DATANASCIMENTO'
+    DataSource = DM.DSCliente
+    MaxLength = 10
+    TabOrder = 4
+  end
+  object DBEdit7: TDBEdit
+    Left = 438
+    Top = 103
+    Width = 334
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'ENDERECO'
+    DataSource = DM.DSCliente
+    TabOrder = 8
+  end
+  object DBEdit8: TDBEdit
+    Left = 643
+    Top = 72
+    Width = 91
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'TELEFONE'
+    DataSource = DM.DSCliente
+    MaxLength = 14
+    TabOrder = 6
+  end
+  object DBEdit9: TDBEdit
+    Left = 47
+    Top = 103
+    Width = 323
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'EMAIL'
+    DataSource = DM.DSCliente
+    TabOrder = 7
+  end
+  object DBEdit10: TDBEdit
+    Left = 34
+    Top = 72
+    Width = 100
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'RG'
+    DataSource = DM.DSCliente
+    MaxLength = 12
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 58
+    Top = 134
+    Width = 223
+    Height = 21
+    DataField = 'IDCIDADE'
+    DataSource = DM.DSCliente
+    KeyField = 'IDCIDADE'
+    ListField = 'NOMECIDADES'
+    ListSource = DM.DSCidade
+    TabOrder = 9
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 529
+    Top = 72
+    Width = 48
+    Height = 21
+    DataField = 'SEXO'
+    DataSource = DM.DSCliente
+    Items.Strings = (
+      'M'
+      'F')
+    TabOrder = 5
+  end
+  object DBComboBox2: TDBComboBox
+    Left = 349
+    Top = 134
+    Width = 91
+    Height = 21
+    DataField = 'STATUSCLIENTE'
+    DataSource = DM.DSCliente
+    Items.Strings = (
+      'ATIVO'
+      'INATIVO')
+    TabOrder = 10
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 168
+    Width = 763
+    Height = 315
+    DataSource = DM.DSCliente
+    TabOrder = 11
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDCLIENTE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECLIENTE'
+        Title.Caption = 'Nome Cliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'RG'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CPF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DATANASCIMENTO'
+        Title.Caption = 'Data de Nascimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TELEFONE'
+        Title.Caption = 'Telefone'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SEXO'
+        Title.Caption = 'Sexo'
+        Width = 43
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMAIL'
+        Title.Caption = 'Email'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cidade'
+        Title.Caption = 'Cidade'
+        Width = 187
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ENDERECO'
+        Title.Caption = 'Endereco'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'STATUSCLIENTE'
+        Title.Caption = 'Status'
+        Visible = True
+      end>
+  end
+end

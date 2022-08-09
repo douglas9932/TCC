@@ -1,0 +1,64 @@
+program Programa;
+
+uses
+  Vcl.Forms,
+  UEstado in 'UEstado.pas' {FEstado},
+  UCidade in 'UCidade.pas' {FCidade},
+  UDM in 'UDM.pas' {DM: TDataModule},
+  UFrame in 'UFrame.pas' {Frame1: TFrame},
+  UPrincipal in 'UPrincipal.pas' {FPrincipal},
+  UCliente in 'UCliente.pas' {FCliente},
+  UFornecedor in 'UFornecedor.pas' {FFornecedor},
+  UFuncionario in 'UFuncionario.pas' {FFuncionario},
+  UProduto in 'UProduto.pas' {FProduto},
+  UMarca in 'UMarca.pas' {FMarca},
+  UCargo in 'UCargo.pas' {FCargo},
+  UVenda in 'UVenda.pas' {FVenda},
+  UItVenda in 'UItVenda.pas' {FItvenda},
+  UConfVenda in 'UConfVenda.pas' {FConfVenda},
+  UPesquisaEstado in 'UPesquisaEstado.pas' {FPesquisaEstado},
+  UPesquisaCidade in 'UPesquisaCidade.pas' {FPesquisaCidade},
+  UPesquisaCargo in 'UPesquisaCargo.pas' {FPesquisaCargo},
+  UPesquisaCliente in 'UPesquisaCliente.pas' {FPesquisaCliente},
+  UPesquisaFornecedor in 'UPesquisaFornecedor.pas' {FPesquisaFornecedor},
+  UPesquisaFuncionario in 'UPesquisaFuncionario.pas' {FPesquisaFuncionario},
+  UpesquisaMarca in 'UpesquisaMarca.pas' {FPesquisaMarca},
+  UPesquisaProduto in 'UPesquisaProduto.pas' {FPesquisaProduto},
+  Unit2 in 'Unit2.pas' {Frame2: TFrame},
+  UPesquisaVenda in 'UPesquisaVenda.pas' {FPesquisaVenda},
+  UPesquisaCompra in 'UPesquisaCompra.pas' {FPesquisaCompra},
+  UCompra in 'UCompra.pas' {FCompra},
+  UConfCompra in 'UConfCompra.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFPrincipal, FPrincipal);
+  Application.CreateForm(TFPesquisaFuncionario, FPesquisaFuncionario);
+  Application.CreateForm(TFPesquisaFornecedor, FPesquisaFornecedor);
+  Application.CreateForm(TFPesquisaCliente, FPesquisaCliente);
+  Application.CreateForm(TFPesquisaCargo, FPesquisaCargo);
+  Application.CreateForm(TFPesquisaCidade, FPesquisaCidade);
+  Application.CreateForm(TFPesquisaEstado, FPesquisaEstado);
+  Application.CreateForm(TFConfVenda, FConfVenda);
+  Application.CreateForm(TFCidade, FCidade);
+  Application.CreateForm(TFCliente, FCliente);
+  Application.CreateForm(TFVenda, FVenda);
+  Application.CreateForm(TFItvenda, FItvenda);
+  Application.CreateForm(TFCargo, FCargo);
+  Application.CreateForm(TFEstado, FEstado);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFFornecedor, FFornecedor);
+  Application.CreateForm(TFFuncionario, FFuncionario);
+  Application.CreateForm(TFProduto, FProduto);
+  Application.CreateForm(TFMarca, FMarca);
+  Application.CreateForm(TFPesquisaMarca, FPesquisaMarca);
+  Application.CreateForm(TFPesquisaProduto, FPesquisaProduto);
+  Application.CreateForm(TFPesquisaVenda, FPesquisaVenda);
+  Application.CreateForm(TFPesquisaCompra, FPesquisaCompra);
+  Application.CreateForm(TFCompra, FCompra);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
